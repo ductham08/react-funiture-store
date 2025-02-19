@@ -5,11 +5,11 @@ import jwtDecode from "jwt-decode";
 // font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUnlock,
   faMagnifyingGlass,
   faCartShopping,
   faUser,
   faUserGear,
+  faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
 // components
 import { showLoginModal } from "../../store/slices/loginModalSlice";
@@ -79,7 +79,7 @@ const Header = ({ isMediumScreen, cart }) => {
                   to="/"
                   className="nav-link color-main-gray hover-color-yellow fs-5"
                 >
-                  Home
+                  Trang Chủ
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -95,7 +95,7 @@ const Header = ({ isMediumScreen, cart }) => {
                   to="/shop"
                   className="nav-link color-main-gray hover-color-yellow fs-5"
                 >
-                  Shop
+                  Cửa hàng
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -111,7 +111,7 @@ const Header = ({ isMediumScreen, cart }) => {
                   to="/about"
                   className="nav-link color-main-gray hover-color-yellow fs-5"
                 >
-                  About
+                  Giới thiệu
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -127,7 +127,7 @@ const Header = ({ isMediumScreen, cart }) => {
                   className="nav-link color-main-gray hover-color-yellow fs-5"
                   to="/contact"
                 >
-                  Contact
+                  Liên hệ
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -149,6 +149,36 @@ const Header = ({ isMediumScreen, cart }) => {
             </ul>
             {!isMediumScreen && (
               <div className="d-flex align-items-center gap-4">
+                {!(cart.role && cart.role === "admin") && (
+                  <button
+                    type="button"
+                    className="cart-btn btn p-0 fs-5 hover-color-yellow position-relative"
+                    onClick={() =>
+                      decodedToken
+                        ? dispatch(showCartModal(true))
+                        : dispatch(showLoginModal(true))
+                    }
+                  >
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    <span className="visually-hidden">cart</span>
+                    <span className="position-absolute bg-yellow top-0 start-0 translate-middle badge rounded-pill">
+                      {cart.items
+                        ? cart.items.length > 99
+                          ? "99+"
+                          : cart.items.length
+                        : 0}
+                      <span className="visually-hidden">items in cart</span>
+                    </span>
+                  </button>
+                )}
+
+                <Link
+                  to="/search"
+                  className="btn p-0 fs-5 color-main-gray hover-color-yellow"
+                >
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  <span className="visually-hidden">search</span>
+                </Link>
                 {isLoggedIn ? (
                   <Link
                     className="btn p-0 color-main-gray fs-5 hover-color-yellow"
@@ -170,37 +200,7 @@ const Header = ({ isMediumScreen, cart }) => {
                     className="btn p-0 color-main-gray hover-color-yellow"
                     onClick={() => dispatch(showLoginModal(true))}
                   >
-                    <FontAwesomeIcon icon={faUnlock} />{" "}
-                    <span className="fw-semibold"> Login / Register</span>
-                  </button>
-                )}
-                <Link
-                  to="/search"
-                  className="btn p-0 fs-5 color-main-gray hover-color-yellow"
-                >
-                  <FontAwesomeIcon icon={faMagnifyingGlass} />
-                  <span className="visually-hidden">search</span>
-                </Link>
-                {!(cart.role && cart.role === "admin") && (
-                  <button
-                    type="button"
-                    className="cart-btn btn p-0 fs-5 hover-color-yellow position-relative"
-                    onClick={() =>
-                      decodedToken
-                        ? dispatch(showCartModal(true))
-                        : dispatch(showLoginModal(true))
-                    }
-                  >
-                    <FontAwesomeIcon icon={faCartShopping} />
-                    <span className="visually-hidden">cart</span>
-                    <span className="position-absolute bg-yellow top-0 start-0 translate-middle badge rounded-pill">
-                      {cart.items
-                        ? cart.items.length > 99
-                          ? "99+"
-                          : cart.items.length
-                        : 0}
-                      <span className="visually-hidden">items in cart</span>
-                    </span>
+                    <FontAwesomeIcon icon={faUserTie} />{" "}
                   </button>
                 )}
               </div>

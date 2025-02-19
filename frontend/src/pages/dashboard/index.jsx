@@ -37,18 +37,18 @@ const Dashboard = () => {
   }, [window.innerWidth]);
 
   useEffect(() => {
-    const token = localStorage.getItem("userToken");
-    if (!token) {
-      navigate("/404", { replace: true });
-      return;
-    }
-    let decoded = jwt_decode(token);
-    if (decoded.role !== "admin") {
-      navigate("/404", { replace: true });
-    } else {
+  //   const token = localStorage.getItem("userToken");
+  //   if (!token) {
+  //     navigate("/404", { replace: true });
+  //     return;
+  //   }
+  //   let decoded = jwt_decode(token);
+  //   if (decoded.role !== "admin") {
+  //     navigate("/404", { replace: true });
+  //   } else {
       setIsAdmin(true);
-    }
-  }, [cart]);
+  //   }
+  }, []);
 
   return isAdmin ? (
     <div id={style.dashboard} className="position-relative">

@@ -1,4 +1,4 @@
-export  const governoratesData = [
+export const governoratesData = [
   { id: "1", governorate_name_ar: "القاهرة", governorate_name_en: "Cairo" },
   { id: "2", governorate_name_ar: "الجيزة", governorate_name_en: "Giza" },
   {

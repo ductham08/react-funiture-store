@@ -25,11 +25,11 @@ const ContactForm = () => {
     };
 
     const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string().required("Họ và tên là bắt buộc"),
     email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
-    message: Yup.string().required("Message is required"),
+        .email("Địa chỉ email không hợp lệ")
+        .required("Địa chỉ email là bắt buộc"),
+    message: Yup.string().required("Nội dung là bắt buộc"),
     });
 
     const sendEmail = async (values, { resetForm }) => {
@@ -48,12 +48,12 @@ const ContactForm = () => {
         "TsoWOt-ZQTaLMUt3q"
         );
         dispatch(
-        showToast("Thanks for contacting us. We'll get back to you as soon as possible.")
+        showToast("Cảm ơn vì đã liên hệ với chúng tôi. Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể")
         );
     } 
     catch (error) {
         console.log(error.text);
-        dispatch(showToast("Failed to send Message! Please try again later!"));
+        dispatch(showToast("Hệ thống lỗi, vui lòng thử lại sau!"));
     }
     setIsSubmitting(false);
     resetForm();
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 className={`form-control bg-light rounded-0 border-light ${
                     touched.name && errors.name ? "is-invalid" : ""
                 } ${style["placeholder-style"]}`}
-                placeholder="Name"
+                placeholder="Họ và tên"
                 autoComplete="off"
             />
             <ErrorMessage
@@ -109,7 +109,7 @@ const ContactForm = () => {
                     touched.message && errors.message ? "is-invalid" : ""
                 }`}
                 rows="4"
-                placeholder="Message"
+                placeholder="Nội dung"
                 autoComplete="off"
             />
             <ErrorMessage
@@ -126,10 +126,10 @@ const ContactForm = () => {
             {isSubmitting ? (
                 <>
                 <span className="spinner-border spinner-border-sm me-2" />
-                Sending...
+                Đang gửi...
                 </>
             ) : (
-                "Send Message"
+                "Gửi ngay"
             )}
             </button>
         </Form>

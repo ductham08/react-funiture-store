@@ -34,7 +34,7 @@ const BrandCategories = () => {
                   className="text-decoration-none cursor-pointer"
                 >
                   <p>
-                    Shop now{" "}
+                    Xem thêm{" "}
                     <span className="ms-2">
                       <FontAwesomeIcon icon={faArrowRight} />
                     </span>
@@ -61,7 +61,7 @@ const BrandCategories = () => {
                   className="text-decoration-none cursor-pointer"
                 >
                   <p>
-                    Shop now{" "}
+                    Xem thêm{" "}
                     <span className="ms-2">
                       <FontAwesomeIcon icon={faArrowRight} />
                     </span>

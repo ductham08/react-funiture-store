@@ -1,63 +1,53 @@
 export const list = [
   {
     id: 1,
-    heading: "Why An FAQ Resource?",
-    content: `Firstly, FAQ pages can bring new visitors to your website via organic search and drive them quickly to related pages – most typically deeper blog pages and service pages closely related to the questions being resolved.
+    heading: "Tại sao lại cần một trang FAQ?",
+    content: `Trước hết, các trang FAQ có thể mang lại khách truy cập mới cho trang web của bạn thông qua tìm kiếm tự nhiên và hướng họ nhanh chóng đến các trang liên quan – thường là các trang blog sâu hơn và trang dịch vụ liên quan chặt chẽ đến các câu hỏi được giải đáp.
   
-    Next, one of the most significant opportunities for impactful brand visibility within the search engine result pages (in-SERP) is targeting audience questions, wants, needs, and pain points.`,
+    Tiếp theo, một trong những cơ hội lớn nhất để nâng cao khả năng hiển thị thương hiệu trong trang kết quả tìm kiếm (SERP) là nhắm mục tiêu vào các câu hỏi, mong muốn, nhu cầu và vấn đề của khán giả.`,
   },
   {
     id: 2,
-    heading: `WIs there any limitation on the quantity or amount of online purchase?
-    `,
-    content: `No, there is no limit. The quantity that you can buy is depending on the available stock of the online purchase.`,
+    heading: "Có giới hạn nào về số lượng hoặc giá trị mua hàng trực tuyến không?",
+    content: "Không, không có giới hạn. Số lượng bạn có thể mua phụ thuộc vào số lượng hàng có sẵn trong kho trực tuyến.",
   },
   {
     id: 3,
-    heading: `How can I get large items home?
-    `,
-    content: `Most Comfy products are flat-packed, making them easy to transport. The Comfy store offers (or will refer you to) a home delivery service if you prefer. Home delivery is not included in the product price.`,
+    heading: "Làm thế nào để tôi mang các sản phẩm có kích thước lớn về nhà?",
+    content: `Hầu hết các sản phẩm của Comfy đều được đóng gói phẳng, giúp việc vận chuyển dễ dàng. Nếu bạn muốn, cửa hàng Comfy có cung cấp (hoặc giới thiệu bạn đến) dịch vụ giao hàng tận nhà. Dịch vụ này không bao gồm trong giá sản phẩm.`,
   },
   {
     id: 4,
-    heading: `Why are items sometimes out of stock?
-    `,
-    content: `Every effort is made to maintain the availability of items shown in the catalogue, but due to popularity and supply issues, some products may not always be available. Generally, Comfy can estimate when a product should be back in stock. Because Comfy products are manufactured throughout the world, there are sometimes circumstances which can cause delivery delays`,
+    heading: "Tại sao một số sản phẩm đôi khi lại hết hàng?",
+    content: `Chúng tôi luôn cố gắng duy trì sự sẵn có của các mặt hàng được hiển thị trong danh mục, nhưng do nhu cầu cao và các vấn đề về nguồn cung, một số sản phẩm có thể không luôn có sẵn. Thông thường, Comfy có thể ước tính thời gian sản phẩm có hàng trở lại. Do các sản phẩm của Comfy được sản xuất trên toàn cầu, đôi khi có những hoàn cảnh có thể gây ra sự chậm trễ trong việc giao hàng.`,
   },
   {
     id: 5,
-    heading: `What if I want to have the products assembled?
-    `,
-    content: `Comfy products are generally easy to assemble and require no special tools. If you prefer, most Comfy stores can refer you to a reputable, reasonably priced assembly company that can come to your home to assemble and install our products.`,
+    heading: "Nếu tôi muốn lắp ráp sản phẩm thì sao?",
+    content: `Các sản phẩm của Comfy thường dễ dàng lắp ráp và không cần công cụ đặc biệt. Nếu bạn muốn, hầu hết các cửa hàng Comfy có thể giới thiệu bạn đến một công ty lắp ráp uy tín với giá cả hợp lý, có thể đến nhà bạn để lắp ráp và lắp đặt sản phẩm.`,
   },
   {
     id: 6,
-    heading: ` Is there any limitation on the quantity or amount of online purchase?
-    `,
-    content: `No, there is no limit. The quantity that you can buy is depending on the available stock of the online purchase.`,
+    heading: "Có giới hạn nào về số lượng hoặc giá trị mua hàng trực tuyến không?",
+    content: "Không, không có giới hạn. Số lượng bạn có thể mua phụ thuộc vào số lượng hàng có sẵn trong kho trực tuyến.",
   },
   {
     id: 7,
-    heading: `Why FAQ Pages Are A Priority
-    `,
-    content: `FAQ pages continue to be a priority area for SEO and digital marketing professionals.
+    heading: "Tại sao trang FAQ lại quan trọng?",
+    content: `Các trang FAQ tiếp tục là một khu vực ưu tiên đối với các chuyên gia SEO và tiếp thị kỹ thuật số.
   
-      An FAQ page is one of the simplest ways to improve your site and help site visitors and users.
+      Một trang FAQ là một trong những cách đơn giản nhất để cải thiện trang web của bạn và hỗ trợ khách truy cập cũng như người dùng.
       
-      Your FAQ section should be seen as a constantly expanding source of value provided to your audience. It is a place where their ever-changing and growing requirements are not only met but anticipated and exceeded frequently.`,
+      Phần FAQ của bạn nên được coi là một nguồn tài nguyên liên tục mở rộng, mang lại giá trị cho khán giả. Đây là nơi nhu cầu không ngừng thay đổi và phát triển của họ không chỉ được đáp ứng mà còn được dự đoán và đáp ứng vượt mong đợi.`,
   },
   {
     id: 8,
-    heading: `What is the Comfy business idea?
-    `,
-    content: `The Comfy business idea is: "We shall offer a wide range of well-designed, functional home furnishing products at prices so low that as many people as possible will be able to afford them."`,
+    heading: "Ý tưởng kinh doanh của Comfy là gì?",
+    content: `Ý tưởng kinh doanh của Comfy là: "Chúng tôi sẽ cung cấp một loạt các sản phẩm nội thất gia đình có thiết kế đẹp, chức năng tốt với mức giá thấp để càng nhiều người có thể mua được càng tốt."`,
   },
   {
     id: 9,
-    heading: `How does Comfy approach environmental issues?
-    `,
-    content: `We're working to create a better environment outdoors as well as indoors.
-
-`,
+    heading: "Comfy tiếp cận các vấn đề môi trường như thế nào?",
+    content: `Chúng tôi đang nỗ lực để tạo ra một môi trường tốt hơn cả trong nhà và ngoài trời.`,
   },
 ];

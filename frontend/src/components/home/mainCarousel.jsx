@@ -19,19 +19,19 @@ const MainCarousel = () => {
         {
           id: 1,
           src: homeSlider1,
-          content: "Outdoor Wicker Hanging Chair",
+          content: "Ghế tựa lưng công thái học",
           discount: 50,
         },
         {
           id: 2,
           src: homeSlider2,
-          content: "Ray Pendant Lamp Choose Your Comfort",
+          content: "Đèn trang trí treo tường",
           discount: 70,
         },
         {
           id: 3,
           src: homeSlider3,
-          content: "Nano Tube Suspension Pendant Lamp",
+          content: "Đèn trang trí phong cách tối giản",
           discount: 10,
         },
       ];
@@ -49,13 +49,13 @@ const MainCarousel = () => {
           <Carousel.Caption className={`${styles["carousel-caption"]}`}>
             <div className={`${styles.captionCarouel}` }>
             <div className="row">
-            <p className={`col-5 col-md-3 col-lg-2  ${styles.discount}`}>Up to {img.discount}% OFF</p>
+            <p className={`col-5 col-md-3 col-lg-2  ${styles.discount}`}>Giảm sâu tới {img.discount}%</p>
             </div>
             <div className="row">
             <h3 className="col-10 col-md-6 col-xl-8">{img.content}</h3>
             </div>
             <Link to="/shop" className="text-decoration-none cursor-pointer">
-             <p className={styles.explore}> Explore Now  <span className="ms-2 "><FontAwesomeIcon icon={faArrowRight}/></span></p>
+             <p className={styles.explore}> Xem ngay  <span className="ms-2 "><FontAwesomeIcon icon={faArrowRight}/></span></p>
             </Link>
              </div>
           </Carousel.Caption>

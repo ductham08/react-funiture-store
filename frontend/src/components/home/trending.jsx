@@ -64,7 +64,6 @@ const Trending = () => {
   return (
     <>
       <div className={`${styles.trendingSection}`}>
-        <h2 className="text-center">Top Trending</h2>
         {!showSpinner ? (
         <div className="container-fluid px-md-5">
           <div className={`row justify-contant-between`}>

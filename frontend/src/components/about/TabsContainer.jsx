@@ -11,77 +11,43 @@ export default function TabsContainer() {
         transition={true}
         fill
       >
-        <Tab eventKey="History" title="History">
+        <Tab eventKey="History" title="Quá trình">
           <p className="mb-2">
-            Our company was founded <b>in 2019</b> by a group of young designers
-            who were passionate about creating modern, affordable furniture.
-            They started out with a small line of minimalist furniture,
-            including tables, chairs, and sofas, that quickly gained popularity
-            among design enthusiasts.
+            Công ty chúng tôi được thành lập vào năm <b>2019</b> bởi một nhóm các nhà thiết kế trẻ, những người đam mê tạo ra đồ nội thất hiện đại, giá cả phải chăng. Họ bắt đầu với một dòng nhỏ đồ nội thất tối giản, bao gồm bàn, ghế và ghế sofa, nhanh chóng trở nên phổ biến trong những người đam mê thiết kế.
           </p>
           <p className="mb-2">
-            <b>In 2020</b>, we launched an online store and began shipping our
-            furniture all over the world. We also expanded our product line to
-            include home decor items, such as wall art and lighting, which
-            helped to attract a wider audience.
+            Trong năm<b> 2020</b>, chúng tôi đã ra mắt một cửa hàng trực tuyến và bắt đầu vận chuyển đồ nội thất của chúng tôi trên toàn thế giới. Chúng tôi cũng đã mở rộng dòng sản phẩm của mình để bao gồm các mặt hàng trang trí nhà, chẳng hạn như nghệ thuật treo tường và ánh sáng, giúp thu hút nhiều đối tượng hơn.
           </p>
           <p className="mb-0">
-            <b>Today</b>, our company continues to grow and thrive, thanks to
-            our commitment to innovation, affordability, and sustainability. We
-            remain dedicated to providing our customers with beautiful,
-            functional furniture that enhances their homes and lives, while also
-            making a positive impact on the environment.
+            <b>Hiện tại</b>, công ty chúng tôi tiếp tục phát triển và phát triển, nhờ cam kết của chúng tôi về đổi mới, khả năng chi trả và tính bền vững. Chúng tôi vẫn dành riêng để cung cấp cho khách hàng của chúng tôi đồ nội thất đẹp, chức năng giúp tăng cường ngôi nhà và cuộc sống của họ, đồng thời tạo ra tác động tích cực đến môi trường.
           </p>
         </Tab>
-        <Tab eventKey="Mission" title="Mission">
+        <Tab eventKey="Mission" title="Nhiệm vụ">
           <p className="mb-2">
-            Our mission is to combine beautiful design with high-quality
-            craftsmanship, while also minimizing our impact on the environment.
-            To achieve this, we embrace the following core values:
+            Nhiệm vụ của chúng tôi là kết hợp thiết kế đẹp với sự khéo léo chất lượng cao, đồng thời giảm thiểu tác động của chúng tôi đối với môi trường. Để đạt được điều này, chúng tôi nắm lấy các giá trị cốt lõi sau:
           </p>
           <p className="mb-2">
-            <b>Innovation: </b>
-            We are constantly pushing the boundaries of design and
-            manufacturing, using technology and creativity to create furniture
-            that is both functional and beautiful.
+            <b>Đổi mới: </b>Chúng tôi liên tục đẩy các ranh giới của thiết kế và sản xuất, sử dụng công nghệ và sáng tạo để tạo ra đồ nội thất vừa chức năng vừa đẹp.
           </p>
           <p className="mb-2">
-            <b>Affordability: </b> We believe that high-quality, stylish
-            furniture should be accessible to everyone. That's why we strive to
-            keep our prices affordable, without compromising on quality or
-            design.
+            <b>Chất lượng: </b>Chúng tôi tin rằng đồ nội thất chất lượng cao, phong cách nên có thể truy cập được cho mọi người. Đó là lý do tại sao chúng tôi cố gắng giữ giá của chúng tôi giá cả phải chăng, mà không ảnh hưởng đến chất lượng hoặc thiết kế.
           </p>
           <p className="mb-0">
-            <b>Customer Focus: </b>
-            We prioritize the needs and preferences of our customers, and strive
-            to create furniture that is tailored to their unique style and
-            needs.
+            <b>Sự hài lòng của khách hàng: </b>Chúng tôi ưu tiên các nhu cầu và sở thích của khách hàng và cố gắng tạo ra đồ nội thất phù hợp với phong cách và nhu cầu độc đáo của họ.
           </p>
         </Tab>
-        <Tab eventKey="Design" title="Design">
+        <Tab eventKey="Design" title="Thiết kế">
           <p className="mb-2">
-            At our company, we believe that great design should be both
-            beautiful and functional. Our approach to furniture design is
-            centered around the following principles:
+          Tại công ty của chúng tôi, chúng tôi tin rằng thiết kế tuyệt vời nên vừa đẹp vừa chức năng. Cách tiếp cận của chúng tôi để thiết kế đồ nội thất tập trung vào các nguyên tắc sau:
           </p>
           <p className="mb-2">
-            <b>Simplicity: </b>We believe that furniture should be simple and
-            uncluttered, with clean lines and minimal ornamentation. We strive
-            to create furniture that is both timeless and contemporary, so that
-            it can fit seamlessly into any home or office environment.
+            <b>Đơn giản: </b>Chúng tôi tin rằng đồ nội thất nên đơn giản và không lộn xộn, với các đường nét sạch sẽ và trang trí tối thiểu. Chúng tôi cố gắng tạo ra đồ nội thất vừa vượt thời gian vừa đương đại, để nó có thể phù hợp liền mạch vào bất kỳ môi trường nhà hoặc văn phòng nào.
           </p>
           <p className="mb-2">
-            <b>Functionality: </b> We design furniture with the user in mind,
-            prioritizing functionality and comfort. We believe that furniture
-            should not only look great, but also serve a purpose and make
-            people's lives easier and more comfortable.
+            <b>Chức năng: </b>Chúng tôi thiết kế đồ nội thất với người dùng trong tâm trí, ưu tiên chức năng và sự thoải mái. Chúng tôi tin rằng đồ nội thất không chỉ trông tuyệt vời mà còn phục vụ mục đích và làm cho cuộc sống của mọi người dễ dàng và thoải mái hơn.
           </p>
           <p className="mb-0">
-            <b>Customization: </b>
-            We understand that every person's taste and style is unique, and we
-            offer customization options to allow our customers to create
-            furniture that truly reflects their individual preferences and
-            needs.
+            <b>Trang trí: </b>Chúng tôi hiểu rằng hương vị và phong cách của mỗi người là duy nhất và chúng tôi cung cấp các tùy chọn tùy chỉnh để cho phép khách hàng của chúng tôi tạo ra đồ nội thất thực sự phản ánh sở thích và nhu cầu cá nhân của họ.
           </p>
         </Tab>
       </Tabs>

@@ -10,7 +10,7 @@ export default function PageHeader({ path }) {
             <ol className="breadcrumb justify-content-center mb-0">
               <li className="breadcrumb-item">
                 <Link to="/" className="text-black-50 text-decoration-none">
-                  Home
+                  Trang Chủ
                 </Link>
               </li>
               <li

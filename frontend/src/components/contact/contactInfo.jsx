@@ -18,7 +18,7 @@ const ContactInfo = () => {
       <div className="row mx-0">
         <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 contact-form">
           <h2 className={`${style["contact-info-title"]} py-3`}>
-            Get In Touch
+            Liên hệ
           </h2>
           <ContactForm />
         </div>
@@ -26,7 +26,7 @@ const ContactInfo = () => {
         <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 px-4">
           <div className="contact-info-container py-5 py-md-0">
             <h2 className={`${style["contact-info-title"]} py-3`}>
-              Contact Info
+              Thông tin liên hệ
             </h2>
             <div className="pt-3">
               <div className="row mx-0">
@@ -34,8 +34,8 @@ const ContactInfo = () => {
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="fa-2x pe-2 pb-2" />
                 </div>
                 <div className="col-md-9 col-lg-10 contact-info ">
-                  <h3 className="d-block fs-5 ">Address</h3>
-                  <p> Cairo Festival City, New Cairo, Egypt </p>
+                  <h3 className="d-block fs-5 ">Địa chỉ</h3>
+                  <p>Số 1, ngách 118, ngõ 300 Nhân Mỹ, Mỹ Đình, Hà Nội</p>
                 </div>
               </div>
               <hr />
@@ -45,8 +45,8 @@ const ContactInfo = () => {
                   <FontAwesomeIcon icon={faHeadphones} className="fa-2x pe-2 pb-2" />
                 </div>
                 <div className="col-md-9 col-lg-10 contact-info">
-                  <h3 className="d-block fs-5">Phone</h3>
-                  <p>+20 1003533427</p>
+                  <h3 className="d-block fs-5">Điện thoại</h3>
+                  <p>+84 111 222 345</p>
                 </div>
               </div>
               <hr />
@@ -56,7 +56,7 @@ const ContactInfo = () => {
                 </div>
                 <div className="col-md-9 col-lg-10 contact-info">
                   <h3 className="d-block fs-5">Email</h3>
-                  <p>comfyproject20@gmail.com</p>
+                  <p>comfycontact@gmail.com</p>
                 </div>
               </div>
               <hr />
@@ -66,8 +66,8 @@ const ContactInfo = () => {
                   <FontAwesomeIcon icon={faClock} className="fa-2x pe-2 pb-2" />
                 </div>
                 <div className="col-md-9 col-lg-10 contact-info">
-                  <h3 className="d-block fs-5">Opening Hours</h3>
-                  <p>Sun-Sat: 8.00am - 9.00.pm</p>
+                  <h3 className="d-block fs-5">Giờ mở cửa</h3>
+                  <p>T2 - T6: 08:00 - 22:00</p>
                 </div>
               </div>
             </div>

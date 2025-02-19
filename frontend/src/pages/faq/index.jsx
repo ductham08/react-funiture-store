@@ -9,21 +9,15 @@ const FAQ = () => {
           className={`${styles.smallcolumn}  mt-5 col-md-6 col-sm-12 col-lg-4  
           `}
         >
-          <h1> frequently asked questions</h1>
-          <p>
-            FAQ pages continue to be a priority area for SEO and digital
-            marketing professionals. An FAQ page is one of the simplest ways to
-            improve your site and help site visitors and users. Your FAQ section
-            should be seen as a constantly expanding source of value provided to
-            your audience.
-          </p>
+          <h1> Câu hỏi thường gặp</h1>
+          <p>Các trang FAQ tiếp tục là một lĩnh vực ưu tiên cho các chuyên gia tiếp thị kỹ thuật số và SEO. Một trang FAQ là một trong những cách đơn giản nhất để cải thiện trang web của bạn và giúp khách truy cập và người dùng trang web. Phần Câu hỏi thường gặp của bạn nên được xem là một nguồn giá trị mở rộng liên tục được cung cấp cho khán giả của bạn.</p>
           <div className={`${styles.listoquestion}   mb-5`}>
-            <a href="#faqpara3">LARGE ITEMS </a>
-            <a href="#faqpara5">ASSEMBLED</a>
-            <a href="#faqpara6">LIMITATION </a>
-            <a href="#faqpara7">PRIORITY</a>
-            <a href="#faqpara8">IDEA</a>
-            <a href="#faqpara9"> ENVIRONMENTAL ISSUES</a>
+            <a href="#faqpara3">Các đơn hàng lớn </a>
+            <a href="#faqpara5">Lắp ráp & Vận chuyển</a>
+            <a href="#faqpara6">Giới hạn </a>
+            <a href="#faqpara7">Ưu tiên</a>
+            <a href="#faqpara8">Ý tưởng</a>
+            <a href="#faqpara9">Thân thiện với môi trường</a>
           </div>
         </div>
 
