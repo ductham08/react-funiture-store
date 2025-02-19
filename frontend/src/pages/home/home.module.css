@@ -87,7 +87,7 @@
 }
 .explore:hover {
   background-color: rgba(0, 0, 0, 0);
-  color: #c7ab62;
+  color: #d88c38;
 }
 @media(max-width: 1200px){
   .captionCarouel h3 {
