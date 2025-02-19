@@ -1,0 +1,89 @@
+.cart-modal {
+  background-color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto !important;
+  width: 27rem !important;
+}
+.modal-content {
+  height: 100svh !important;
+}
+
+.progress {
+  height: 1.6rem !important;
+}
+.dark-bar {
+  background-color: rgb(5, 5, 74) !important;
+}
+.yellow-bar {
+  background-color: var(--yellow) !important;
+}
+.yellow-bar-hidden {
+  display: none !important;
+}
+.input-text {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+.checkout-btn:hover {
+  background-color: var(--yellow);
+  color: white;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.progress-bar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.product-container {
+  height: calc(80vh - 150px);
+  overflow-y: auto;
+  max-height: 26rem;
+}
+.pointer {
+  cursor: pointer;
+}
+.spanColor {
+  width: 1rem !important;
+  height: 1rem !important;
+  outline: 1px solid #dddada;
+}
+.stock{
+  margin-top: -0.5rem;
+  margin-left: 1rem;
+}
+.counter {
+  -ms-flex-wrap: nowrap !important;
+      flex-wrap: nowrap !important;
+  margin-top: -0.5rem;
+}
+.counter-modal{
+  width: 1rem;
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  .cart-modal {
+    max-width: 20rem; /* adjust the modal's width for smaller screens */
+  }
+  .modal-content{
+    font-size: 0.8rem;
+  }
+  .spanColor {
+    width: 1rem !important;
+    height: 1rem !important;
+    border: 1px solid rgb(222, 205, 205);
+  }
+  .progress {
+    height: 2.6rem !important;
+  }
+  .stock{
+    margin-left: 0;
+  }
+}

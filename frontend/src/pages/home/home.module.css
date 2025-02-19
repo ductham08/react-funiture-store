@@ -1,0 +1,405 @@
+/* start animarion*/
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* end animarion*/
+/* --------------------------------- Carouel--------------------------------  */
+/* start Carouel style  */
+
+.carousel-item {
+  height: 100%; 
+}
+.carouselImage{
+  object-fit: cover;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: var(--main-black) !important;
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+  border-radius: 50% !important;
+}
+
+.carousel-caption {
+  right: 0;
+  top: 25%;
+  left: 6%;
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  --animate-delay: 0s;
+  --animate-timing-function: cubic-bezier(0.26, 0.54, 0.32, 1);
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.captionCarouel {
+  text-align: start;
+  color: var(--main-black);
+}
+.discount {
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-left: 10px;
+  text-align: center;
+  border-radius: 3px;
+  color: var(--white);
+  font-weight: 700;
+  background-color: var(--yellow);
+}
+.captionCarouel h3 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 64px;
+
+}
+.explore {
+  color: var(--main-black);
+  margin: 0px;
+  padding: 0px 65px 0px 0px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.explore span {
+  font-family: "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.explore:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #c7ab62;
+}
+@media(max-width: 1200px){
+  .captionCarouel h3 {
+    font-size: 40px;
+    line-height: 40px;
+    width: 47% !important;
+  }
+  .discount{
+    font-size: 14px;
+  }
+}
+@media (max-width: 920px) {
+  .captionCarouel h3 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .carousel-caption {
+    left: 15%;
+    right: 0%;
+    top: 17%;
+  }
+  .captionCarouel {
+    height: 100px;
+  }
+  .discount {
+    font-weight: 500;
+    padding: 7px 0px;
+    width: 8rem !important;
+  }
+  .captionCarouel h3 {
+    font-size: 23px;
+    line-height: 20px;
+    width: 44% !important;
+  }
+  .explore {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-indicators{
+    height: 40vh !important;
+  }
+  .captionCarouel h3 {
+    font-size: 1.25rem !important;
+    width: 69% !important;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: .8rem !important;
+    height: .8rem !important;
+  
+  }
+
+}
+@media (max-width: 500px){
+  .captionCarouel h3 {
+    width: 90% !important;
+  }
+}
+/* end Carouel style  */
+
+/* ----------------------------------------- Trending ----------------------------------------- */
+/* start trenging section */
+
+.trendingSection {
+  margin-top: 50px !important;
+}
+.trendingSection h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px !important;
+}
+
+/* end trenging section */
+
+/* ------------------------------------------- brand Category ----------------------- */
+/* start brand category  */
+.brandCategory {
+  margin-top: 50px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modifyImage {
+  height: 400px;
+  margin-bottom: 30px !important;
+}
+
+.brandImage{
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  -o-transition: transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+.modifyImage:hover .brandImage{
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.content {
+  position: absolute;
+  left: 10%;
+}
+.brandCategory h4 {
+  margin-bottom: 30px;
+  letter-spacing: 0px;
+  font-size: 14px;
+  color: var(--yellow);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.brandCategory h3 {
+  margin-bottom: 35px;
+  letter-spacing: 0;
+  line-height: 35px;
+  font-size: 40px;
+  font-weight: 500;
+}
+.brandCategory p {
+  margin: 0;
+  color: var(--main-black);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+}
+.brandCategory p:hover {
+  color: var(--yellow);
+}
+/* end brand category  */
+
+/* ----------------------------------------- category ----------------------------------------- */
+
+/* start category section*/
+.category {
+  margin-top: 50px !important;
+}
+
+.categoryItem {
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.24s linear 0ms;
+  -o-transition: all 0.24s linear 0ms;
+  transition: all 0.24s linear 0ms;
+}
+.gapColumn{
+  gap: 1.5rem 0 !important;
+}
+.categoryItem img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: var(--main-black);
+  right: 10px;
+  text-align: center;
+  bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.overlay p {
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 0;
+  min-width: 150px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  color: var(--white);
+  font-weight: 700;
+  background-color: var(--yellow);
+}
+.overlay h2 {
+  text-shadow: 1px 2px 3px var(--white) !important;
+  font-size: 24px !important;
+  margin-top: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  text-transform: capitalize;
+}
+.categoryLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.overlay h2:hover {
+  color: var(--yellow) !important;
+}
+
+.itemOne img,
+.secondItem img,
+.thirdItem img
+{
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  -o-transition: transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+.itemOne:hover img,
+.secondItem:hover img,
+.thirdItem:hover img {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.categoryItem .overlay h6 {
+  margin-top: 10px;
+  opacity: 0 !important;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.categoryItem:hover .overlay h6 {
+  opacity: 1 !important;
+}
+.overlay h6:hover {
+  color: var(--yellow) !important;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for viewport width between 768px and 991px */
+  .overlay p{
+    min-width: 120px
+  }
+}
+@media (max-width: 768px) {
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+  }
+  .gapColumn{
+    gap: 1.5rem 0;
+  }
+  .category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .overlay p ,.overlay h6{
+    font-size: 1.25rem;
+    min-width: 150px
+  }
+  .overlay h2{
+    font-size: 1.25rem;
+    margin-bottom: 10px !important;
+  }
+  .categoryItem .overlay h6{
+    margin-top: 0;
+    opacity: 1 !important;
+    color: var(--yellow) !important;
+  }
+
+}
+/* end category section*/
+
+/* --------------------------------------------- services ---------------------------------------- */
+
+/* start services section*/
+.services {
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
+}
+
+@media (max-width: 767px) {
+  .services {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
+}
+.icon {
+  line-height: 100%;
+  font-size: 40px;
+  margin: 0 0 24px 0;
+}
+.item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.item p {
+  line-height: 25px;
+  font-size: 16px;
+  color: var(--secondary-gray);
+}
+
+/* end section */

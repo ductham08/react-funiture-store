@@ -1,0 +1,496 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+:root {
+  --white: #fff;
+  --yellow: #c7ab62;
+  --main-black: #222;
+  --price-compare: #888;
+  --main-gray: #444;
+  --secondary-gray: #666;
+  --footer-links: #999;
+  --light-gray: #f6f6f6;
+  --red: #e21c1c;
+}
+
+/* typography */
+body,
+button,
+input {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+body {
+  color: var(--main-black);
+}
+
+/* global style */
+a,
+img {
+  -webkit-user-drag: none;
+}
+
+.multi-carousel .slider-btn {
+  opacity: 0 !important;
+}
+
+.multi-carousel:hover .slider-btn {
+  opacity: 1 !important;
+}
+
+.react-multi-carousel-track {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* start custom classes */
+.hover-bg-yellow:hover {
+  background-color: var(--yellow) !important;
+}
+
+.hover-color-yellow:hover {
+  color: var(--yellow) !important;
+}
+
+.btn-bg-dark {
+  background-color: var(--main-black) !important;
+}
+
+.btn-bg-dark:hover {
+  background-color: var(--yellow) !important;
+}
+
+.btn-bg-gray {
+  background-color: var(--light-gray) !important;
+}
+
+.btn-bg-white {
+  background-color: var(--white) !important;
+}
+
+.btn-bg-gray:hover,
+.btn-bg-white:hover {
+  background-color: var(--yellow) !important;
+  color: white !important;
+}
+
+.btn-with-border {
+  border: 2px solid var(--main-black);
+  color: var(--main-black);
+}
+
+.btn-with-border:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.color-old-price {
+  color: var(--price-compare);
+}
+
+.color-product-name {
+  color: var(--secondary-gray);
+}
+
+.slider-btn {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  opacity: 0;
+}
+
+.slider-btn:hover {
+  background-color: var(--yellow) !important;
+}
+
+.color-main-gray {
+  color: var(--main-gray);
+}
+
+.color-secondary-gray {
+  color: var(--secondary-gray);
+}
+
+.color-main-black {
+  color: var(--main-black);
+}
+
+.color-yellow {
+  color: var(--yellow);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.disable-scroll .react-multi-carousel-track,
+.disable-scroll .react-multi-carousel-item {
+  -webkit-transform: unset !important;
+  -ms-transform: unset !important;
+  transform: unset !important;
+  -webkit-transform-style: unset !important;
+  transform-style: unset !important;
+  will-change: unset !important;
+}
+/* end custom classes */
+
+/* start main layout */
+/* Start instagram posts */
+.insta-posts .dragged {
+  pointer-events: none;
+}
+
+.insta-posts .icon-holder {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 10;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.insta-posts .post:hover .icon-holder {
+  opacity: 1;
+}
+
+.insta-posts .post img {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.insta-posts .post:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* end instagram posts */
+
+/* start brands slider*/
+.brands-slider img {
+  -webkit-transition: -webkit-transform ease 0.5s;
+  transition: -webkit-transform ease 0.5s;
+  -o-transition: transform ease 0.5s;
+  transition: transform ease 0.5s;
+  transition: transform ease 0.5s, -webkit-transform ease 0.5s;
+}
+
+.brands-slider img:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* end brands slider*/
+
+/* start product card */
+.product-card .holder .hover-img {
+  opacity: 0;
+  -webkit-transition: opacity ease 0.5s, -webkit-transform ease 0.7s;
+  transition: opacity ease 0.5s, -webkit-transform ease 0.7s;
+  -o-transition: opacity ease 0.5s, transform ease 0.7s;
+  transition: opacity ease 0.5s, transform ease 0.7s;
+  transition: opacity ease 0.5s, transform ease 0.7s,
+    -webkit-transform ease 0.7s;
+}
+
+.product-card:hover .hover-img {
+  opacity: 1;
+}
+
+.product-card .add-to-cart-btn {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  width: 86%;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+@media (min-width: 992px) {
+  .product-card .add-to-cart-btn {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+  }
+
+  .product-card .holder:hover .add-to-cart-btn {
+    opacity: 1;
+  }
+}
+
+.product-card .holder:hover .hover-img {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.product-card .badge {
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1;
+}
+/* end product card */
+
+/*Footer*/
+.footer-color {
+  color: var(--footer-links) !important;
+}
+footer {
+  background-color: var(--main-black);
+}
+footer {
+  padding-top: 6rem;
+}
+.footer-toggle {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.footer-toggle .icon {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  margin-left: 1rem;
+}
+.footer-content {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+.footer-content.show {
+  max-height: 40rem;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.menu-footer .link {
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.menu-footer .link:hover {
+  display: block;
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+.icon {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  margin-left: 1rem;
+}
+.icon::before {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.icon-rotate {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.contacts {
+  text-decoration: underline;
+}
+/* end footer */
+
+/* start header */
+.header {
+  z-index: 1040;
+}
+
+.header .nav-link.active {
+  color: var(--yellow) !important;
+}
+
+.header .logo {
+  width: 6rem;
+}
+
+.cart-btn .badge {
+  font-size: 0.6rem;
+}
+/* end header */
+
+/* start page header */
+.headerCover {
+  height: 50vh;
+  background-image: url(./assets/page-header.jpg);
+  background-size: cover;
+}
+
+.headerCover h1 {
+  font-size: 3rem;
+}
+
+@media (max-width: 767.5px) {
+  .headerCover h1 {
+    font-size: 2.2rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+}
+/* end page header */
+
+/* start insta post */
+.loading-img {
+  background-color: #ededed !important;
+  background: -o-linear-gradient(
+      350deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    #ededed;
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    #ededed;
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  -webkit-animation: loading 1s ease-in-out infinite;
+  animation: loading 1s ease-in-out infinite;
+  aspect-ratio: 1/1;
+}
+
+@-webkit-keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+/* end insta post */
+
+/* start dashboard */
+.dash-navlink.active {
+  color: var(--dash-active-text) !important;
+  background-color: var(--dash-active-bg) !important;
+}
+
+.dash-navlink.active::after {
+  background-color: var(--dash-btn-bg);
+}
+/* end dashboard */
+/* end main layout */
+
+/* about style page */
+.aboutContainer .aboutBtn {
+  background-color: var(--main-black);
+  color: var(--white);
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background-color: var(--main-black) !important;
+  color: white !important;
+}
+/* Define the color for the active tab */
+.aboutContainer .nav-link.active {
+  color: white;
+}
+.nav-tabs .nav-link {
+  color: var(--main-black);
+}
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  color: var(--main-black);
+}
+.nav-tabs .Tabs {
+  margin-top: 0;
+}
+/* =====  end about page =============== */
+
+/* ===== start scroll to top button ======= */
+.flow-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 4rem;
+  right: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 1000;
+  -webkit-box-shadow: 1px 0px 6px rgb(203, 202, 202);
+  box-shadow: 1px 0px 6px rgb(203, 202, 202);
+}
+@media (max-width: 767px) {
+  .flow-button {
+    right: 1.7rem;
+    bottom: 4.5rem;
+  }
+}
+/* ===== end scroll to top button ======= */
+
+/* ===== start  home carousel  =======*/
+#home .carousel-inner {
+  height: 100%;
+}
+#home .carousel .carousel-control-next,
+#home .carousel-control-prev {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+/* ====== end  home carousel ========= */
+
+/* for cartModal*/
+.cartmodal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+/*end cartModal*/
+
+/* start delete alert */
+.delete-alert {
+  z-index: 1045;
+}
+
+.delete-alert .close-btn {
+  display: block !important;
+  position: relative !important;
+  margin-left: auto !important;
+  padding: 0.5rem !important;
+  font-size: 0.9rem;
+}
+/* end delete alert */
