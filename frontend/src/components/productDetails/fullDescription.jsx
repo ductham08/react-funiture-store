@@ -8,7 +8,7 @@ const FullDescription = ({ description }) => {
         <span
           className={`${style["full-description-title"]} d-inline-block py-3 h-100 position-relative`}
         >
-          Description
+          Mô tả sản phẩm
         </span>
       </h2>
       <p

@@ -6,7 +6,7 @@ const Price = ({ price, discount }) => {
     <>
       {discount > 0 && (
         <span className={`color-yellow ${style.discount}`}>
-          Discount: (${discount}%)
+          Giảm tới: (${discount}%)
         </span>
       )}
       {discount > 0 ? (

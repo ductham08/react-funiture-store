@@ -7,7 +7,7 @@ import * as Yup from "yup";
 
 //component
 import axiosInstance from "../../apis/config";
-import { governoratesData } from "../../apis/governorates";
+// import { provinces } from "../../apis/governorates";
 import { cities } from "../../apis/cities";
 import { showToast } from "../../store/slices/toastSlice";
 
@@ -179,7 +179,7 @@ const AccountInfo = ({ user, token,setUser }) => {
                 <option value="" id="0">
                   Select a governorate
                 </option>
-                {governoratesData.map((governorate) => (
+                {/* {provinces.map((governorate) => (
                   <option
                     key={governorate.id}
                     id={governorate.id}
@@ -187,7 +187,7 @@ const AccountInfo = ({ user, token,setUser }) => {
                   >
                     {governorate.governorate_name_en}
                   </option>
-                ))}
+                ))} */}
               </Field>
               {errors.address?.governorate && touched?.address?.governorate ? (
                 <span className="text-danger ms-2">

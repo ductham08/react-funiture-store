@@ -8,16 +8,16 @@ export default function Breadcrumbcomponant() {
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <Link to="/cart" className={`text-decoration-none `}>
-              Cart
+              Giỏ hàng
             </Link>
           </li>
           <li className="breadcrumb-item">
             <Link to="/checkout" className={`text-decoration-none  `}>
-              information
+              Thông tin giao hàng
             </Link>
           </li>
           <li className={`breadcrumb-item `} aria-current="page">
-            shipping
+            Thanh toán
           </li>
         </ol>
       </nav>

@@ -152,7 +152,7 @@ const Details = ({ product }) => {
           </span>
         </div>
         <div className="d-flex align-items-center gap-3 mb-4">
-          <h3 className="h6 mb-0 fw-semibold">Colors:</h3>
+          <h3 className="h6 mb-0 fw-semibold">Màu sắc:</h3>
           <Colors
             colors={product.colors}
             active={activeColor}
@@ -170,7 +170,7 @@ const Details = ({ product }) => {
         ) : showBtnSpinner ? (
           <button className="btn btn-bg-dark text-white text-capitalize px-5 rounded-2 d-block mx-auto">
             <div className="spinner-border spinner-border-sm" role="status">
-              <span className="visually-hidden">Loading...</span>
+              <span className="visually-hidden">Vui lòng chờ ...</span>
             </div>
           </button>
         ) : (
@@ -183,7 +183,7 @@ const Details = ({ product }) => {
             }
             className="btn btn-bg-dark text-white text-capitalize px-5 rounded-2 d-block mx-auto"
           >
-            Add to cart
+            Thêm vào giỏ hàng
           </button>
         )}
       </div>
@@ -203,9 +203,9 @@ const Details = ({ product }) => {
               className="form-check-label footer-color"
               htmlFor="flexCheckDefault"
             >
-              I agree with the{" "}
+              Tôi đã đọc và chấp nhận{" "}
               <Link to="/faq" className="color-main-black">
-                terms and conditions
+                điều khoản và bảo mật khi mua hàng
               </Link>
             </label>
           </div>
@@ -226,7 +226,7 @@ const Details = ({ product }) => {
               cart.items ? handleBuyProduct() : dispatch(showLoginModal(true))
             }
           >
-            buy it now
+            Mua ngay
           </button>
         ) : (
           <button
@@ -234,7 +234,7 @@ const Details = ({ product }) => {
             className="btn my-3 py-2 d-block w-100 btn-bg-dark text-white text-uppercase"
           >
             <div className="spinner-border spinner-border-sm" role="status">
-              <span className="visually-hidden">Loading...</span>
+              <span className="visually-hidden">Vui lòng chờ ...</span>
             </div>
           </button>
         )}

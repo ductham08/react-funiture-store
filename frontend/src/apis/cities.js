@@ -1,6 +1,4 @@
 export const cities = [
-
-
     { "id": "1", "governorate_id": "1", "city_name_ar": "15 مايو", "city_name_en": "15 May" },
     { "id": "2", "governorate_id": "1", "city_name_ar": "الازبكية", "city_name_en": "Al Azbakeyah" },
     { "id": "3", "governorate_id": "1", "city_name_ar": "البساتين", "city_name_en": "Al Basatin" },
@@ -387,7 +385,7 @@ export const cities = [
     { "id": "384", "governorate_id": "27", "city_name_ar": "سوهاج الجديدة", "city_name_en": "Sohag El Gedida" },
     { "id": "385", "governorate_id": "27", "city_name_ar": "أخميم", "city_name_en": "Akhmeem" },
     { "id": "386", "governorate_id": "27", "city_name_ar": "أخميم الجديدة", "city_name_en": "Akhmim El Gedida" },
-    { "id": "387", "governorate_id": "27", "city_name_ar": "البلينا", "city_name_en": "Albalina" },
+    { "id": "387", "governorate_id": "27", "s": "البلينا", "city_name_en": "Albalina" },
     { "id": "388", "governorate_id": "27", "city_name_ar": "المراغة", "city_name_en": "El Maragha" },
     { "id": "389", "governorate_id": "27", "city_name_ar": "المنشأة", "city_name_en": "almunsha'a" },
     { "id": "390", "governorate_id": "27", "city_name_ar": "دار السلام", "city_name_en": "Dar AISalaam" },

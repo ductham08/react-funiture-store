@@ -12,7 +12,7 @@ const Breadcrumb = ({ name }) => {
             to="/"
             className={`${style["home-link"]} text-decoration-none color-secondary-gray`}
           >
-            Home
+            Trang chủ
           </Link>
         </li>
         <li

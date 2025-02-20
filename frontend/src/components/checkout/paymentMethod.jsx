@@ -24,7 +24,6 @@ export default function PaymentMethod() {
 
   const token = localStorage.getItem("userToken");
   const shippingValue = 15.0;
-  // ===========
 
   const cart = useSelector(state => state.cart.cart);
 

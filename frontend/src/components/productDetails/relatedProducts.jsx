@@ -46,7 +46,7 @@ const RelatedProducts = ({ data }) => {
 
   return data ? (
     <div className="py-5">
-      <h2 className="text-center my-4">Related Products</h2>
+      <h2 className="text-center my-4">Sản phẩm tương tự</h2>
       <div
         className="ps-3"
         onMouseLeave={() => setIsMouseDown(false)}

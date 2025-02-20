@@ -16,7 +16,7 @@ module.exports.login = (req, res, next) => {
         email: process.env.adminEmail,
         role: "admin",
       },
-      process.env.secretKey,
+      process.env.SERECT_KEY,
       { expiresIn: "6h" }
     );
     res.status(200).json({ data: "ok", token });
@@ -37,7 +37,7 @@ module.exports.login = (req, res, next) => {
             id: userObj._id,
             role: "user",
           },
-          process.env.secretKey,
+          process.env.SERECT_KEY,
           { expiresIn: "6h" }
         );
         res.status(200).json({ data: "ok", token });

@@ -13,7 +13,7 @@ const AdditionalInfo = ({ product }) => {
         <span className="color-secondary-gray">N/A</span>
       </li>
       <li>
-        <span className={`${style.key} d-inline-block color-main-gray`}>Category:</span>
+        <span className={`${style.key} d-inline-block color-main-gray`}>Danh mục:</span>
         <span className="color-secondary-gray text-capitalize">{product.category.name}</span>
       </li>
     </ul>

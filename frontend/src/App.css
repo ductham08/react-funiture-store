@@ -605,6 +605,10 @@ footer {
     padding-top: 25px !important;
   }
 }
-
 /* navbar custom end */
 
+/* Custom form */
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
