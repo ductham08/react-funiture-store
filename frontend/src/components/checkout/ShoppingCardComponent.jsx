@@ -20,7 +20,7 @@ export default function ShoppingCardComponent() {
     }
   });
 
-  const shipping = totalPrice >= 1200 ? 0 : 15;
+  const shipping = totalPrice >= 1000000 ? 0 : 30000;
 
   const priceWithShapping = (shipping + +totalPrice).toFixed(2);
 
@@ -36,38 +36,37 @@ export default function ShoppingCardComponent() {
               className={`${style.Subtotal} mb-1 row mt-5 mx-0 
 `}
             >
-              <div className="col-2 ms-0 ps-0 ">Subtotal</div>
+              <div className="col-2 ms-0 ps-0 ">Tổng tiền hàng</div>
               <div className="col-7"></div>
               <div className="col-2">
-                <p>${totalPrice}</p>
+                <p>{totalPrice.toLocaleString('vi-VN')} đ</p>
               </div>
             </div>
             <div className={`${style.Shipping}  mb-1 row mx-0`}>
-              <div className="col-4 ps-0 ">Shipping</div>
+              <div className="col-4 ps-0 ">Chi phí vận chuyển</div>
               <div className="col-5"></div>
               <div className="col-3 ">
                 {shipping === 0 ? (
-                  <p className="">free shipping</p>
+                  <p className="">Miễn phí</p>
                 ) : (
-                  <p className="">${shipping}</p>
+                  <p className="">{shipping.toLocaleString('vi-VN')} đ</p>
                 )}
               </div>
             </div>
             <hr className="hr" />
             <div className="mb-1 row">
-              <div className="col-sm-2 col-md-4 col-4 ">Total</div>
+              <div className="col-sm-2 col-md-4 col-4 ">Tổng thanh toán</div>
               <div className="col-sm-0 col-md-4 col-3"></div>
 
               <div className="col-sm-7 col-md-4 col-4">
                 <p className=" ">
-                  <span className={`${style.currency}`}> USD</span>$
-                  {priceWithShapping}
+                  {priceWithShapping.toLocaleString('vi-VN')} đ
                 </p>
               </div>
             </div>
           </div>
         ) : (
-          <div> Cart is Empty</div>
+          <div> Giỏ hàng trống</div>
         )}
       </div>
     </div>

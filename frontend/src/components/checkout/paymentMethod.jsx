@@ -17,13 +17,13 @@ export default function PaymentMethod() {
   const [showWarning, setShowWarning] = useState(false);
   const [showBtnSpinner, SetShowBtnSpinner] = useState(false);
   const [isAddingOrder, setIsAddingOrder] = useState(false);
-  const [buttonText, setButtonText] = useState("Confirm order");
+  const [buttonText, setButtonText] = useState("Xác nhận đặt hàng");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const token = localStorage.getItem("userToken");
-  const shippingValue = 15.0;
+  const shippingValue = 30000;
 
   const cart = useSelector(state => state.cart.cart);
 
@@ -97,14 +97,14 @@ export default function PaymentMethod() {
           <div className="form-control mr-5 ps-4">
             <OrderInfo formData={formData} />
           </div>
-          <p className="mt-5 ms-1"> Shipping method</p>
+          <p className="mt-5 ms-1"> Vận chuyển</p>
           <div
             className={`${style.shippingMethod}   form-control active-input mb-5`}
           >
             <div className="row">
-              <div className="col-4 "> standard</div>
+              <div className="col-4 ">Giao hàng tiêu chuẩn</div>
               <div className="col-5"> </div>
-              <div className="col-2"> ${shippingValue}</div>
+              <div className="col-2"> {shippingValue.toLocaleString('vi-VN')} đ</div>
             </div>
           </div>
           <div className="row mb-4  w-100 mx-auto  ">
@@ -112,7 +112,7 @@ export default function PaymentMethod() {
               to="/checkout"
               className={` col-lg-6  col-md-6 col-sm-12  col-12  mt-2 mb-3  mt-4 ${style.returnLink} text-decoration-none `}
             >
-              {`<  `} return to information
+              Chỉnh sửa thông tin
             </Link>
             {!showBtnSpinner ? (
               <button
@@ -139,14 +139,14 @@ export default function PaymentMethod() {
           </div>
           <hr className="border" />
           <small className={`${style.gray} mt-2`}>
-            All Rights Reserved to comfy team
+            * Miễn phí vận chuyển với các đơn hàng có giá trị lớn hơn 1.000.000đ
           </small>
         </div>
       </div>
 
       {showWarning && (
         <ConfirmPopup
-          msg={"Are you sure you want to purchase?"}
+          msg={"Bạn chắc chắn muốn đặt hàng?"}
           onConfirm={() => {
             onConfirmClick();
             setIsAddingOrder(true);

@@ -29,13 +29,11 @@ export default function ProductCardCompnant({ index, item }) {
         </div>
         <div className="col-2 mt-3  ">
           <p className="mb-0">
-            $
-            {item.product_id.price -
-              (item.product_id.price * item.product_id.discount) / 100}
+            {(item.product_id.price - (item.product_id.price * item.product_id.discount) / 100 ).toLocaleString('vi-VN')} đ
           </p>
           {item.product_id.discount !== 0 && (
             <p className={`${style.gray} mb text-decoration-line-through`}>
-              ${item.product_id.price}
+              {item.product_id.price.toLocaleString('vi-VN')} đ
             </p>
           )}
         </div>

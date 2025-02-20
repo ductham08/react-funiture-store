@@ -8,7 +8,7 @@ import * as Yup from "yup";
 //component
 import axiosInstance from "../../apis/config";
 // import { provinces } from "../../apis/governorates";
-import { cities } from "../../apis/cities";
+// import { cities } from "../../apis/cities";
 import { showToast } from "../../store/slices/toastSlice";
 
 // style
@@ -207,7 +207,7 @@ const AccountInfo = ({ user, token,setUser }) => {
                 as="select"
               >
                 <option value="">Select a city</option>
-                {cities.map((city) => {
+                {/* {cities.map((city) => {
                   const selectedGovernorateValue =
                     document.querySelector("#governorate")?.value;
                   const selectedGovernorateOption = document.querySelector(
@@ -228,7 +228,7 @@ const AccountInfo = ({ user, token,setUser }) => {
                     );
                   }
                   return updateUser?.address.governorate;
-                })}
+                })} */}
               </Field>
               {errors.address?.city && touched?.address?.city ? (
                 <span className="text-danger ms-2">{errors.address.city}</span>

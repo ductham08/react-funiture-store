@@ -96,12 +96,12 @@ const Account = () => {
       {!showSpinner ? (
         <div className="container">
           <div className="d-flex justify-content-between align-items-center col-12 col-lg-7">
-            <h1>Account</h1>
+            <h1>Đơn hàng</h1>
             <button
               className={`text-danger btn btn-md mb-2`}
               onClick={handelLogout}
             >
-              Logout
+              Đăng xuất
             </button>
           </div>
           <p className="h5 mt-2 mt-md-0">
@@ -120,7 +120,7 @@ const Account = () => {
             ${activeTitle === "myOrder" ? style.active : ""}`}
                 onClick={handleMyOrderClick}
               >
-                <h6>My Order</h6>
+                <h6>Đơn hàng</h6>
               </div>
             </div>
             <div className="col-5 col-sm-4 col-lg-2">
@@ -129,7 +129,7 @@ const Account = () => {
              ${activeTitle === "accountInfo" ? style.active : ""}`}
                 onClick={handleAccountInfoClick}
               >
-                <h6>Account info</h6>
+                <h6>Thông tin</h6>
               </div>
             </div>
             <div className="col-6 col-sm-4 col-lg-2">
@@ -138,7 +138,7 @@ const Account = () => {
              ${activeTitle === "changePassword" ? style.active : ""}`}
                 onClick={handleChangePasswordClick}
               >
-                <h6 className="text-center text-sm-start">Change password</h6>
+                <h6 className="text-center text-sm-start">Đổi mật khẩu</h6>
               </div>
             </div>
           </div>

@@ -11,26 +11,6 @@ import { tinh_tp } from "../../apis/tinh_tp";
 import { quan_huyen } from "../../apis/quan_huyen";
 import { xa_phuong } from "../../apis/xa_phuong";
 
-const DisplayingErrorMessagesSchema = Yup.object().shape({
-  fullName: Yup.string()
-    .required("Full name is required")
-    .matches(/^[a-zA-Z ]+$/, "Full name shouldn't have numbers")
-    .min(3, "Full name must be at least 3 characters")
-    .max(50, "Full name must be less than 50 characters"),
-  phone: Yup.string()
-    .required("Required")
-    .matches(
-      /^(\+2)?01[0-2]{1}[0-9]{8}$/,
-      "Invalid phone number. Must be an Egyptian phone number"
-    ),
-  address: Yup.object({
-    city: Yup.string().required("Required").label("City"),
-    street: Yup.string().label("Street").required("Required"),
-    district: Yup.string().label("district").required("Required"),
-    apartment: Yup.string().label("Apartment").required("Required"),
-  }),
-});
-
 export default function FormComonent() {
   const [saveInfo, setSaveInfo] = useState(true);
   const [user, setUser] = useState("");
@@ -55,7 +35,6 @@ export default function FormComonent() {
           district: quan_huyen.find(item => item.code == user?.address?.district)?.name,
           street: xa_phuong.find(item => item.code == user?.address?.street)?.name,
           apartment: user?.address?.apartment,
-          country: "Việt Nam"
         },
       };
     }
@@ -93,10 +72,7 @@ export default function FormComonent() {
         },
     };
 
-    console.log(theSendData);
-    
-
-    // localStorage.setItem("localFormData", JSON.stringify(theSendData));
+    localStorage.setItem("localFormData", JSON.stringify(theSendData));
 
     if (saveInfo) {
       axiosInstance
@@ -123,6 +99,7 @@ export default function FormComonent() {
       </div>
     );
   }
+
 
   return (
     <div className="p-4">
@@ -225,7 +202,7 @@ export default function FormComonent() {
 
                   }
                 </Field>
-                <label htmlFor="city">Quận/Huyện</label>
+                <label htmlFor="district">Quận/Huyện</label>
 
                 {errors.address?.city && touched.address?.district ? (
                   <span className="text-danger ms-2">
@@ -265,7 +242,7 @@ export default function FormComonent() {
 
                   }
                 </Field>
-                <label htmlFor="city">Xã/Phường</label>
+                <label htmlFor="street">Xã/Phường</label>
 
                 {touched.address?.street && errors.address?.street && (
                   <div className="text-danger ms-2">{errors.address?.street}</div>
@@ -280,7 +257,7 @@ export default function FormComonent() {
                   type="text"
                   id="apartment"
                 />
-                <label htmlFor="apartment">Địa chỉ </label>
+                <label htmlFor="apartment" className="address">Địa chỉ </label>
                 {touched.address?.apartment && errors.address?.apartment && (
                   <div className="text-danger ms-2">
                     {errors.address?.apartment}

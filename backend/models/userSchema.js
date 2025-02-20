@@ -5,26 +5,18 @@ const addressSchema = new mongoose.Schema({
       type: String,
       default:""
     },
-    street: {
+    district: {
       type: String,
       default:""
     },
-    building: {
-      type: Number,
-      default:0,
-    },
-    governorate: {
+    street: {
       type: String,
-      default:"",
+      default:""
     },
     apartment: {
       type: String,
       default:"",
     },
-    postalCode: {
-      type: Number,
-      default:0
-    }
   },{ _id: false});
 
 const schema = new mongoose.Schema({

@@ -28,14 +28,14 @@ const ConfirmPopup = ({msg, onConfirm, onCancel }) => {
               className="btn btn-bg-dark text-white"
               onClick={onConfirm}
             >
-              confirm
+              Xác nhận
             </button>
             <button
               type="button"
               className="btn btn-bg-dark text-white"
               onClick={onCancel}
             >
-              cancel
+              Hủy
             </button>
           </div>
         </div>
