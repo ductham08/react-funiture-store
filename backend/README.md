@@ -16,7 +16,7 @@
 [Comfy](https://comfy-frontend.vercel.app) is a MERN fullstack furniture Ecommerce project that has the following features:
 
 - Regiseteration / logging-in system
-- Shopping cart
+- Giỏ hàng
 - Product details
 - Checkout process
 - User account

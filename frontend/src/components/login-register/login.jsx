@@ -39,7 +39,7 @@ const Login = ({ closeModal, saveUserData }) => {
       .post("/login", user)
       .then((response) => {
         // handle response data, e.g. show success message
-        dispatch(showToast("Login successfully!"));
+        dispatch(showToast("Đăng nhập thành công!"));
         // store token in local storage
         localStorage.setItem("userToken", response.data.token);
         // save User Data
@@ -81,7 +81,7 @@ const Login = ({ closeModal, saveUserData }) => {
                 className={`form-control ${styles.input}`}
                 name="email"
                 type="email"
-                placeholder="Please enter your email address"
+                placeholder="Vui lòng nhập địa chỉ email"
               />
               {errors.email && touched.email ? (
                 <span className="text-danger ms-2"> {errors.email}</span>
@@ -89,7 +89,7 @@ const Login = ({ closeModal, saveUserData }) => {
             </div>
             <div className="mb-3">
               <label className="mb-1" htmlFor="password">
-                Password <span>*</span>
+                Mật khẩu <span>*</span>
               </label>
               <div className={styles.passwordInputWrapper}>
                 <Field
@@ -97,7 +97,7 @@ const Login = ({ closeModal, saveUserData }) => {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   id="password"
-                  placeholder="Please enter a strong password"
+                  placeholder="Bạn chưa nhập mật khẩu"
                 />
                 <span
                   className={styles.togglePasswordVisibilityButton}
@@ -120,7 +120,7 @@ const Login = ({ closeModal, saveUserData }) => {
               <input
                 type="submit"
                 className={`btn-bg-dark ${styles.button}`}
-                value="Login"
+                value="Đăng nhập"
               />
             </div>
           </Form>

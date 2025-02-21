@@ -77,7 +77,7 @@ function CartPage() {
             <tr>
               <td colSpan={4} className="text-center pt-4 border-0">
                 <span className="d-block py-3 fw-semibold">
-                  Your cart is empty.
+                  Chưa có sản phẩm nào trong giỏ hàng!
                 </span>
                 <button
                   type="button"
@@ -124,7 +124,7 @@ function CartPage() {
                       >
                         <strong>
                           <FontAwesomeIcon icon={faTrashCan} className="me-2" />
-                          Empty Shopping Cart
+                          Empty Giỏ hàng
                         </strong>
                       </button>
                     </div>

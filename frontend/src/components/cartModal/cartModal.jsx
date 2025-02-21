@@ -79,7 +79,7 @@ function CartModal({ showModal, hideModal }) {
               <div className={`${style["modal-content"]} border-0 rounded-0`}>
                 <div className="modal-header  bg-dark rounded-0 text-light ">
                   <strong className="modal-title px-4" id="cartModalLabel">
-                    SHOPPING CART
+                    Giỏ hàng
                   </strong>
 
                   <span aria-hidden="true" className={`${style["pointer"]}`}>
@@ -95,14 +95,14 @@ function CartModal({ showModal, hideModal }) {
                 <div className="modal-body">
                   {cart.items.length === 0 ? (
                     <div className="text-center pt-4">
-                      <p>Your cart is empty.</p>
+                      <p>Chưa có sản phẩm nào trong giỏ hàng!</p>
                       <button
                         type="button"
                         className="btn btn-dark rounded-0 p-3"
                         size="lg"
                         onClick={handleReturnToShop}
                       >
-                        Return to Shop
+                        Tiếp tục mua hàng
                       </button>
                     </div>
                   ) : (

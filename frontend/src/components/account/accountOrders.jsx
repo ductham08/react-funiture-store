@@ -37,7 +37,7 @@ const AccountOrders = ({ token }) => {
   return (
     <div>
       <h2 className={`${styles["text-2xl"]} ${styles.subTitle}`}>
-        Order History
+        Lịch sử đặt hàng
       </h2>
       {!showSpinner ? (
         <>
@@ -62,7 +62,7 @@ const AccountOrders = ({ token }) => {
                             </span>
                             <span className="mx-2">-</span>
                             <span className={styles.deliever}>
-                              To be delivered in 5 days
+                              Giao hàng dự kiến sau 3 ngày
                             </span>
                           </p>
                         </div>
@@ -73,7 +73,7 @@ const AccountOrders = ({ token }) => {
                             data-bs-target={`#${collapseId}`}
                             aria-expanded={index === 0 ? "true" : "false"}
                           >
-                            View Order
+                            Xem chi tiết
                           </button>
                         </div>
                       </div>
@@ -123,11 +123,7 @@ const AccountOrders = ({ token }) => {
                                       className={`${styles.price} py-1 px-2 text-center`}
                                     >
                                       $
-                                      {item.price *
-                                        (
-                                          1 -
-                                          item.product_id.discount / 100
-                                        ).toFixed(2)}
+                                      {item.price * (1 - item.product_id.discount / 100).toFixed(2)}
                                     </p>
                                   </div>
                                 </div>
@@ -146,13 +142,13 @@ const AccountOrders = ({ token }) => {
                         className={`my-3 mx-3 d-flex justify-content-between align-items-center`}
                       >
                         <div>
-                          <p className="h5">Total Price</p>
+                          <p className="h6">Tổng thanh toán</p>
                         </div>
                         <div>
                           <p
-                            className={`h6 ${styles.price} py-1 px-2 text-center`}
+                            className={`h6 py-1 px-2 text-center`}
                           >
-                            ${order.totalPrice}
+                            {order.totalPrice.toLocaleString('vi-VN')} đ
                           </p>
                         </div>
                       </div>

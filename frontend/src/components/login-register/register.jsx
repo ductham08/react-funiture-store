@@ -36,7 +36,7 @@ const Register = ({ onRegistrationSuccess }) => {
       .post("/register", user)
       .then((response) => {
         // handle response data, e.g. show success message
-        dispatch(showToast("Register submitted successfully!"));
+        dispatch(showToast("Đăng ký tài khoản thành công!"));
         resetForm();
         setTimeout(() => {
           onRegistrationSuccess();
@@ -44,7 +44,7 @@ const Register = ({ onRegistrationSuccess }) => {
       })
       .catch((error) => {
         // handle error, e.g. show error message
-        dispatch(showToast("Email already exists / Registration failed. Please try again."));
+        dispatch(showToast("Email đã tồn tại, vui lòng kiểm tra lại!"));
       });
   };
   return (
@@ -55,31 +55,31 @@ const Register = ({ onRegistrationSuccess }) => {
         }}
         validationSchema={Yup.object({
           fullName: Yup.string()
-            .required("Full name is required")
-            .matches(/^[a-zA-Z ]+$/,"Full name shouldn't have numbers")
-            .min(3, "Full name must be at least 3 characters")
-            .max(50, "Full name must be less than 50 characters"),
+            .required("Vui lòng nhập đầy đủ họ và tên")
+            .matches(/^[a-zA-Z ]+$/,"Họ và tên không được chứa số và ký tự đặc biệt")
+            .min(3, "Họ và tên cần có ít nhất 3 ký tự")
+            .max(50, "Họ và tên không được nhiều hơn 50 ký tự"),
           email: Yup.string()
-            .required("Email is required")
-            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Email must be a valid email address")
-            .test("email-username-length", "Sorry, email username must be between 6 and 30 characters long", function(value) {
+            .required("Email là trường thông tin bắt buộc")
+            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Không đúng định dạng email")
+            .test("email-username-length", "Xin lỗi, tên người dùng gửi email phải dài từ 6 đến 30 ký tự", function(value) {
               const username = value.split("@")[0];
               return username.split("@")[0].length >= 6 && username.length <= 30;
             })
-            .test("lowercase", "Email must be lowercase", function(value) {
+            .test("lowercase", "Vui lòng không có ký tự viết hoa trong email", function(value) {
               return value.toLowerCase() === value;
             }),
           password: Yup.string()
-            .required("Password is required")
-            .min(8, "Password must be at least 8 characters long")
+            .required("Mật khẩu là trường thông tin bắt buộc")
+            .min(8, "Mật khẩu phải dài ít nhất 8 ký tự")
             .matches(
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-              "Password must contain at least one uppercase letter, one lowercase letter, one number, and one symbol from (@$!%*?&) ."
+              "Mật khẩu phải chứa ít nhất một chữ hoa, một chữ cái viết thường, một số và một ký hiệu đặc biệt"
             ),
           confirmPassword: Yup.string()
-            .required("Confirm Password is required")
-            .oneOf([Yup.ref("password")], "Password do not match")
-            .label("Confirm Password"),
+            .required("Xác nhận mật khẩu là bắt buộc")
+            .oneOf([Yup.ref("password")], "Mật khẩu không khớp")
+            .label("Xác nhận mật khẩu"),
         })}
         onSubmit={handleSubmit}
       >
@@ -87,14 +87,14 @@ const Register = ({ onRegistrationSuccess }) => {
           <Form className={styles.label}>
             <div className="mb-3">
               <label className="mb-1" htmlFor="fullName">
-                Full Name <span>*</span>
+                Họ và tên <span>*</span>
               </label>
               <Field
                 className={`form-control ${styles.input}`}
                 name="fullName"
                 type="text"
                 id="fullName"
-                placeholder="Please enter your fullName"
+                placeholder="Vui lòng nhập đầy đủ tên của bạn"
               />
               {errors.fullName && touched.fullName ? (
                 <span className="text-danger ms-2">{errors.fullName}</span>
@@ -109,7 +109,7 @@ const Register = ({ onRegistrationSuccess }) => {
                 name="email"
                 type="email"
                 id="email"
-                placeholder="Please enter a valid email address"
+                placeholder="Vui lòng nhập địa chỉ email"
               />
               {errors.email && touched.email ? (
                 <span className="text-danger ms-2">{errors.email}</span>
@@ -117,7 +117,7 @@ const Register = ({ onRegistrationSuccess }) => {
             </div>
             <div className="mb-3">
               <label className="mb-1" htmlFor="password">
-                Password <span>*</span>
+                Mật khẩu <span>*</span>
               </label>
               <div className={styles.passwordInputWrapper}>
                 <Field
@@ -125,7 +125,7 @@ const Register = ({ onRegistrationSuccess }) => {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   id="password"
-                  placeholder="Please enter s strong password"
+                  placeholder="Vui lòng nhập mật khẩu"
                 />
                 <span
                   className={styles.togglePasswordVisibilityButton}
@@ -145,14 +145,14 @@ const Register = ({ onRegistrationSuccess }) => {
 
             <div className="mb-3">
               <label className="mb-1" htmlFor="confirmPassword">
-                Confirm Password <span>*</span>
+                Xác nhận mật khẩu <span>*</span>
               </label>
               <Field
                 className={`form-control ${styles.input}`}
                 name="confirmPassword"
                 type="password"
                 id="confirmPassword"
-                placeholder="Please confirm your password"
+                placeholder="Vui lòng xác nhận mật khẩu của bạn"
               />
               {errors.confirmPassword && touched.confirmPassword ? (
                 <span className="text-danger ms-2">
@@ -166,7 +166,7 @@ const Register = ({ onRegistrationSuccess }) => {
               <input
                 type="submit"
                 className={`btn-bg-dark ${styles.button}`}
-                value="Create New Account"
+                value="Tạo tài khoản"
               />
             </div>
           </Form>

@@ -79,7 +79,7 @@ const Modal = () => {
                     }`}
                   onClick={() => handleTabClick("login")}
                 >
-                  Login
+                  Đăng nhập
                 </h6>
                 <h6
                   className={`col-6 text-center 
@@ -90,7 +90,7 @@ const Modal = () => {
                     }`}
                   onClick={() => handleTabClick("register")}
                 >
-                  Register
+                  Đăng ký
                 </h6>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Modal = () => {
                 <>
                   <p className={styles.or}>
                     <span className={styles.line}></span>
-                    <span>or</span>
+                    <span>hoặc</span>
                     <span className={styles.line}></span>
                   </p>
                   <div
@@ -115,7 +115,7 @@ const Modal = () => {
                     <input
                       type="button"
                       className={`btn-bg-gray ${styles.button} ${styles.register}`}
-                      value="Create New Account"
+                      value="Tào tài khoản"
                       onClick={handleCreateAccountClick}
                     />
                   </div>
@@ -125,7 +125,7 @@ const Modal = () => {
                 <>
                   <p className={styles.or}>
                     <span className={styles.line}></span>
-                    <span>or</span>
+                    <span>hoặc</span>
                     <span className={styles.line}></span>
                   </p>
                   <div
@@ -134,7 +134,7 @@ const Modal = () => {
                     <input
                       type="button"
                       className={`btn-bg-gray ${styles.button} ${styles.register}`}
-                      value="Login"
+                      value="Đăng nhập"
                       onClick={() => handleTabClick("login")}
                     />
                   </div>
