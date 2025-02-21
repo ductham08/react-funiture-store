@@ -10,6 +10,8 @@ import * as Yup from "yup";
 // style
 import axios from "axios";
 import styles from "../../pages/account/account.module.css";
+import axiosInstance from "../../apis/config";
+import { showToast } from "../../store/slices/toastSlice";
 
 const AccountInfo = ({ user, token, setUser }) => {
   const { id } = useParams();
@@ -44,51 +46,59 @@ const AccountInfo = ({ user, token, setUser }) => {
   }, []);
 
   useEffect(() => {
-    if (updateUser?.address?.city) {
-      axios.get(`https://provinces.open-api.vn/api/p/${updateUser?.address?.city}?depth=2`)
+    if (updateUser?.address?.city || cityUser) {
+      axios.get(`https://provinces.open-api.vn/api/p/${cityUser ? cityUser : updateUser?.address?.city }?depth=2`)
         .then(res => setDataDistrict(res.data.districts))
         .catch(err => console.log(err));
     } else {
       setDataDistrict([]);
       setDataWard([]);
     }
-  }, [updateUser]);
+  }, [updateUser, cityUser]);
 
   useEffect(() => {
-    if (updateUser?.address?.district) {
-      axios.get(`https://provinces.open-api.vn/api/d/${updateUser?.address?.district}?depth=2`)
+    if (updateUser?.address?.district || districtUser) {
+      axios.get(`https://provinces.open-api.vn/api/d/${districtUser ? districtUser : updateUser?.address?.district}?depth=2`)
         .then(res => setDataWard(res.data.wards))
         .catch(err => console.log(err));
     } else {
       setDataWard([]);
     }
-  }, [updateUser]);
+  }, [updateUser, districtUser]);
 
   const updateUserSubmit = (updateUser) => {
-    // SetShowBtnSpinner(true);
+    SetShowBtnSpinner(true);
 
-    console.log(updateUser);
-    
-    // axiosInstance
-    //   .patch("/users", updateUser, {
-    //     params: {
-    //       id: id
-    //     },
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //       "Content-Type": "application/json",
-    //       "x-access-token": token,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     dispatch(showToast("Account Updated successfully!"));
-    //     SetShowBtnSpinner(false);
-    //     setUser(updateUser)
-    //   })
-    //   .catch((err) => {
-    //     dispatch(showToast("Unable to update, please try again."));
-    //     SetShowBtnSpinner(false);
-    //   });
+    let localSendData = {
+      ...updateUser,
+      address: {
+        city: updateUser.address.city ,
+        district: updateUser.address.district,
+        street: updateUser.address.ward,
+        apartment: updateUser.address.apartment,
+      },
+    };
+      
+    axiosInstance
+      .patch("/users", localSendData, {
+        params: {
+          id: id
+        },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "x-access-token": token,
+        },
+      })
+      .then((res) => {
+        dispatch(showToast("Account Updated successfully!"));
+        SetShowBtnSpinner(false);
+        setUser(localSendData)
+      })
+      .catch((err) => {
+        dispatch(showToast("Unable to update, please try again."));
+        SetShowBtnSpinner(false);
+      });
   };
 
   return (
@@ -104,16 +114,16 @@ const AccountInfo = ({ user, token, setUser }) => {
           fullName: Yup.string()
             .required("Họ và tên là bắt buộc")
             .matches(/^[a-zA-Z ]+$/, "Họ và tên không được có số hoặc ký tự đặc biệt")
-            .min(3, "Full name must be at least 3 characters")
-            .max(50, "Full name must be less than 50 characters"),
+            .min(3, "Họ và tên không được ít hơn 3 ký tự")
+            .max(50, "Họ và tên không thể nhiều hơn 50 ký tự"),
           email: Yup.string()
             .required("Email is required")
-            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Email must be a valid email address")
-            .test("email-username-length", "Sorry, email username must be between 6 and 30 characters long", function (value) {
+            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Email không đúng định dạng")
+            .test("email-username-length", "Email phải dài từ 6 đến 30 ký tự", function (value) {
               const username = value.split("@")[0];
               return username.split("@")[0].length >= 6 && username.length <= 30;
             })
-            .test("lowercase", "Email must be lowercase", function (value) {
+            .test("lowercase", "Email phải là định dạng không in hoa", function (value) {
               return value.toLowerCase() === value;
             }),
 
@@ -127,22 +137,8 @@ const AccountInfo = ({ user, token, setUser }) => {
           address: Yup.object({
             city: Yup.string().optional().nullable().label("City"),
             street: Yup.string().optional().nullable().label("Street"),
-            building: Yup.number()
-              .optional()
-              .nullable()
-              .min(1, "Building can't be 0")
-              .integer("Building must be an integer number.")
-              .label("Building"),
-            governorate: Yup.string()
-              .optional()
-              .nullable()
-              .label("Governorate"),
+            district: Yup.string().optional().nullable().label("district"),
             apartment: Yup.string().optional().nullable().label("Apartment"),
-            postalCode: Yup.string()
-              .optional()
-              .length(5, "Postal code must be exactly 5 digits")
-              .matches(/(?!0)[0-9]{5}/, "Postal code must not start with zero")
-              .label("Postal Code"),
           })
             .optional()
             .nullable()
@@ -166,21 +162,6 @@ const AccountInfo = ({ user, token, setUser }) => {
               <label>Email</label>
               <Field as="input" name="email" className="form-control " placeholder="Email" />
               {errors.email && touched.email && <div className="invalid-feedback d-block">{errors.email}</div>}
-            </div>
-            <div className={`mb-4 ${styles["max-w-xl"]}`}>
-              <label className="mb-1" htmlFor="phone">
-                Số điện thoại
-              </label>
-              <Field
-                className={`form-control ${styles.input}`}
-                name="phone"
-                type="text"
-                id="phone"
-                placeholder="Please enter your phone number"
-              />
-              {errors?.phone && touched?.phone ? (
-                <span className="text-danger ms-2">{errors.phone}</span>
-              ) : null}
             </div>
 
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
