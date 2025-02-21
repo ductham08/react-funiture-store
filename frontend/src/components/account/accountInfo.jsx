@@ -7,12 +7,11 @@ import * as Yup from "yup";
 
 //component
 import axiosInstance from "../../apis/config";
-// import { provinces } from "../../apis/governorates";
-// import { cities } from "../../apis/cities";
 import { showToast } from "../../store/slices/toastSlice";
 
 // style
 import styles from "../../pages/account/account.module.css";
+import { tinh_tp } from "../../apis/tinh_tp";
 
 const AccountInfo = ({ user, token,setUser }) => {
   const { id } = useParams();
@@ -197,7 +196,7 @@ const AccountInfo = ({ user, token,setUser }) => {
             </div>
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
               <label className="mb-1" htmlFor="city">
-                City
+                Tỉnh/Thành phố
               </label>
               <Field
                 className={`form-control ${styles.input}`}
@@ -206,29 +205,21 @@ const AccountInfo = ({ user, token,setUser }) => {
                 id="city"
                 as="select"
               >
-                <option value="">Select a city</option>
-                {/* {cities.map((city) => {
-                  const selectedGovernorateValue =
-                    document.querySelector("#governorate")?.value;
-                  const selectedGovernorateOption = document.querySelector(
-                    `#governorate option[value="${selectedGovernorateValue}"]`
-                  );
-                  const selectedGovernorateId = selectedGovernorateOption
-                    ? selectedGovernorateOption.id
-                    : null;
-                  if (city.governorate_id === selectedGovernorateId) {
+                <option value="">Chọn Tỉnh/Thành phố</option>
+                {tinh_tp.map((city) => {
+                  if (updateUser?.address.city) {
                     return (
                       <option
-                        key={city.id}
-                        id={city.id}
-                        value={city.city_name_en}
+                        key={city.code}
+                        id={city.code}
+                        value={city.code}
                       >
-                        {city.city_name_en}
+                        {city.name}
                       </option>
                     );
                   }
-                  return updateUser?.address.governorate;
-                })} */}
+                  return updateUser?.address.city;
+                })}
               </Field>
               {errors.address?.city && touched?.address?.city ? (
                 <span className="text-danger ms-2">{errors.address.city}</span>
@@ -254,26 +245,8 @@ const AccountInfo = ({ user, token,setUser }) => {
             </div>
 
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
-              <label className="mb-1" htmlFor="building">
-                Building
-              </label>
-              <Field
-                className={`form-control ${styles.input}`}
-                name="address.building"
-                type="number"
-                id="building"
-                placeholder="Please enter your building number"
-              />
-              {errors.address?.building && touched?.address?.building ? (
-                <span className="text-danger ms-2">
-                  {errors.address.building}
-                </span>
-              ) : null}
-            </div>
-
-            <div className={`mb-4 ${styles["max-w-xl"]}`}>
               <label className="mb-1" htmlFor="apartment">
-                Apartment
+                Địa chỉ
               </label>
               <Field
                 className={`form-control ${styles.input}`}
@@ -289,23 +262,6 @@ const AccountInfo = ({ user, token,setUser }) => {
               ) : null}
             </div>
 
-            <div className={`mb-4 ${styles["max-w-xl"]}`}>
-              <label className="mb-1" htmlFor="postalCode">
-                Postal Code
-              </label>
-              <Field
-                className={`form-control ${styles.input}`}
-                name="address.postalCode"
-                type="text"
-                id="postalCode"
-                placeholder="Please enter your postal Code"
-              />
-              {errors.address?.postalCode && touched?.address?.postalCode ? (
-                <span className="text-danger ms-2">
-                  {errors.address.postalCode}
-                </span>
-              ) : null}
-            </div>
             <div className={`pt-3`}>
             {!showBtnSpinner ? 
               <input

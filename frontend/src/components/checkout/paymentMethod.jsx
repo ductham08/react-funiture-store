@@ -80,7 +80,6 @@ export default function PaymentMethod() {
         setIsAddingOrder(true);
         SetShowBtnSpinner(false);
 
-        // delete form data from localStorage
         localStorage.removeItem("localFormData");
         setButtonText("order Done");
       })

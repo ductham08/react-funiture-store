@@ -8,28 +8,18 @@ const addressSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    street: {
+    district: {
       type: String,
       required: true,
     },
-    building: {
-      type: Number,
-      required: true,
-      min: 1,
-    },
-    governorate: {
+    street: {
       type: String,
       required: true,
     },
     apartment: {
       type: String,
       required: true,
-    },
-    postalCode: {
-      type: Number,
-      required: true,
-      min: 1,
-    },
+    }
   },
   { _id: false }
 );

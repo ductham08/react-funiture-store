@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-
 import style from "../../pages/checkout/checkout.module.css";
 
 const OrderInfo = ({ formData }) => {
-
   return (
     <div className={`${style.orderInfo} row mr-5 `}>
       <div className={`${style.first} row mr-5 `}>
@@ -21,8 +19,7 @@ const OrderInfo = ({ formData }) => {
         <div className={`${style.gray} col-3`}>Địa chỉ nhận</div>
         <div className="col-6">
           {" "}
-          {formData?.address?.apartment} ,{formData?.address?.street},
-          {formData?.address?.district} ,{formData?.address?.city}
+          {formData?.address?.apartment}, {formData?.address?.street}, {formData?.address?.district}, {formData?.address?.city}
         </div>
         <div className="col-3">
           <Link to="/checkout" className={`${style.linkclass}`}>

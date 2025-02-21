@@ -15,6 +15,5 @@ export default configureStore({
     loginModal: loginModalSlice,
     cartModal: cartModalSlice,
     toastInfo: toastSlice,
- 
   },
 });

@@ -100,10 +100,8 @@ module.exports.updateUser = (request, response, next) => {
               phone: request.body.phone,
               "address.city": request.body.address?.city,
               "address.street": request.body.address?.street,
-              "address.building": request.body.address?.building,
-              "address.governorate": request.body.address?.governorate,
+              "address.district": request.body.address?.district,
               "address.apartment": request.body.address?.apartment,
-              "address.postalCode": request.body.address?.postalCode,
             },
           }
         );
