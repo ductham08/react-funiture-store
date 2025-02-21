@@ -55,20 +55,19 @@ const ChangePasswords = ({ user, token}) => {
         },
       })
       .then((res) => {
-        dispatch(showToast("Change Password successfully!"));
+        dispatch(showToast("Cập nhật mật khẩu mới thành công!"));
         SetShowBtnSpinner(false);
         resetForm()
       })
       .catch((err) => {
-        // handle error, e.g. show error message
-        dispatch(showToast("Unable to update / check your current Password again and make sure that new password is different from the current."));
+        dispatch(showToast("Không thể cập nhật / kiểm tra lại mật khẩu hiện tại của bạn và đảm bảo rằng mật khẩu mới khác với hiện tại."));
         SetShowBtnSpinner(false);
       });
   };
   return (
     <div>
       <h2 className={`${styles["text-2xl"]} ${styles.subTitle}`}>
-        Update your password
+        Đổi mật khẩu
       </h2>
 
       <Formik
@@ -77,19 +76,19 @@ const ChangePasswords = ({ user, token}) => {
         }}
         validationSchema={Yup.object({
             currentPassword: Yup.string().required(
-              "Current Password is required"
-            ).label("Current Password"),
+              "Vui lòng nhập mật khẩu hiện tại"
+            ).label("Mật khẩu hiện tại"),
           password: Yup.string()
-            .required("Password is required")
-            .min(8, "Password must be at least 8 characters long")
+            .required("Mật khẩu là bắt buộc")
+            .min(8, "Mật khẩu phải dài ít nhất 8 ký tự")
             .matches(
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-              "Password must contain at least one uppercase letter, one lowercase letter, one number, and one symbol from (@$!%*?&)."
+              "Mật khẩu phải chứa ít nhất một chữ hoa, một chữ cái viết thường, một số và một ký hiệu từ (@$!%*? &)."
             ),
           confirmPassword: Yup.string()
-            .required("Confirm Password is required")
-            .oneOf([Yup.ref("password")], "Password doesn't match")
-            .label("Confirm Password"),
+            .required("Xác nhận mật khẩu là bắt buộc")
+            .oneOf([Yup.ref("password")], "Mật khẩu không khớp")
+            .label("Xác nhận mật khẩu"),
         })}
         onSubmit={updateUserSubmit}
       >
@@ -97,7 +96,7 @@ const ChangePasswords = ({ user, token}) => {
           <Form className={styles.label}>
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
               <label className="mb-1" htmlFor="currentPassword">
-                Current Password
+                Mật khẩu cũ
               </label>
               <div className={styles.passwordInputWrapper}>
                 <Field
@@ -105,7 +104,7 @@ const ChangePasswords = ({ user, token}) => {
                   name="currentPassword"
                   type={showCurrentPassword ? "text" : "password"}
                   id="currentPassword"
-                  placeholder="Please enter your current password"
+                  placeholder="Vui lòng nhập mật khẩu hiện tại của bạn"
                 />
                 <span
                   className={styles.togglePasswordVisibilityButton}
@@ -124,7 +123,7 @@ const ChangePasswords = ({ user, token}) => {
             </div>
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
               <label className="mb-1" htmlFor="password">
-                New password
+                Mật khẩu mới
               </label>
               <div className={styles.passwordInputWrapper}>
                 <Field
@@ -132,7 +131,7 @@ const ChangePasswords = ({ user, token}) => {
                   name="password"
                   type={showNewPassword ? "text" : "password"}
                   id="password"
-                  placeholder="Please enter new password"
+                  placeholder="Vui lòng nhập mật khẩu mới"
                 />
                 <span
                   className={styles.togglePasswordVisibilityButton}
@@ -152,14 +151,14 @@ const ChangePasswords = ({ user, token}) => {
 
             <div className={`mb-4 ${styles["max-w-xl"]}`}>
               <label className="mb-1" htmlFor="confirmPassword">
-                Confirm Password
+                Xác nhận mật khẩu
               </label>
               <Field
                 className={`form-control ${styles.input}`}
                 name="confirmPassword"
                 type="password"
                 id="confirmPassword"
-                placeholder="Please confirm your password"
+                placeholder="Vui lòng xác nhận mật khẩu của bạn"
               />
               {errors.confirmPassword && touched.confirmPassword ? (
                 <span className="text-danger ms-2">
@@ -173,7 +172,7 @@ const ChangePasswords = ({ user, token}) => {
               <input
                 type="submit"
                 className={`btn-bg-dark text-center ${styles.button}`}
-                value="Update password"
+                value="Cập nhật mật khẩu"
               />
               : 
               <button

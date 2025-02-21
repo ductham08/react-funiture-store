@@ -29,11 +29,11 @@ const PriceFilter = ({ min, max, value, onFilter }) => {
   return (
     <div className="filter price-filter position-relative mb-4 mb-md-0">
       <span className="position-absolute start-0 top-100 pt-2">
-        {min}${minTooClose && `-${Math.floor(value)}$`}
+        {min.toLocaleString('vi-VN')} đ{minTooClose &&` - ${Math.floor(value).toLocaleString('vi-VN')} đ`}
       </span>
       <span className="position-absolute end-0 top-100 pt-2">
         {maxTooClose && `${Math.floor(value)}$-`}
-        {value < max ? max : Math.floor(value)}$
+        {value < max ? max : Math.floor(value).toLocaleString('vi-VN')} đ
       </span>
       {!minTooClose && !maxTooClose ? (
         <span
@@ -42,12 +42,12 @@ const PriceFilter = ({ min, max, value, onFilter }) => {
             left: `${Math.floor(((value - min) * 100) / (max - min))}%`,
           }}
         >
-          {Math.floor(value)}$
+          {Math.floor(value).toLocaleString('vi-VN')} đ
         </span>
       ) : (
         ""
       )}
-      <FilterTitle name="price" />
+      <FilterTitle name="Giá" />
       <input
         type="range"
         className="d-block w-100"

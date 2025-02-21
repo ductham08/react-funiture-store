@@ -65,22 +65,19 @@ const Footer = () => {
           <div className="col-lg-5 col-md-6 col-sm-12 mb-4">
             <img src={logo1} alt="" style={{ width: "9rem" }} />
             <p className="pt-4 footer-color">
-              Since 2013 we’ve been creating industrial design, residential
-              architecture, commercial interiors. Chase mice attack feet but rub
-              face on everything cepteur sint occaecat cupidatat proident.
+              Kể từ năm 2013, chúng tôi đã tạo ra thiết kế công nghiệp, dân cư Kiến trúc, nội thất thương mại. Chase chuột tấn công chân nhưng chà xát Đối mặt với tất cả mọi thứ Cepteur Sint Occaecat Cupidatat Proident.
             </p>
             <h6
               className="text-light footer-toggle d-sm-none d-flex "
               onClick={toggleFollowUs}
             >
-              Follow Us{" "}
+              Theo dõi chúng tôi{" "}
               <FontAwesomeIcon
                 icon={faAngleDown}
                 className={`icon ${showFollowUs ? "icon-rotate" : ""} hover-color-yellow`}
               />
             </h6>{" "}
             <div className={`footer-content ${showFollowUs ? "show" : ""}`}>
-              <h6 className="text-light d-none d-sm-block ">Follow Us</h6>
               <div className="social-icons">
                 <Link
                   to="https://instagram.com/comfy_store4?igshid=MzNlNGNkZWQ4Mg=="
@@ -121,19 +118,18 @@ const Footer = () => {
               className="text-light footer-toggle d-sm-none"
               onClick={toggleHereToHelp}
             >
-              HERE TO HELP{" "}
+              FAQ{" "}
               <FontAwesomeIcon
                 icon={faAngleDown}
                 className={`icon ${showHereToHelp ? "icon-rotate" : ""} hover-color-yellow`}
               />
             </h6>
-            <h6 className="text-light d-none d-sm-block">HERE TO HELP</h6>
+            <h6 className="text-light d-none d-sm-block">FAQ</h6>
 
             <div className={`footer-content ${showHereToHelp ? "show" : ""}`}>
               <div>
                 <p className="pt-3 footer-color">
-                  Have a question? You may find an answer in our FAQs. But you
-                  can also contact us:
+                Có một câu hỏi? Bạn có thể tìm thấy một câu trả lời trong Câu hỏi thường gặp của chúng tôi. Nhưng bạn Cũng có thể liên hệ với chúng tôi:
                 </p>
               </div>
               <div>
@@ -145,10 +141,10 @@ const Footer = () => {
                       size="lg"
                     />
                   </Link>
-                  <span className="text-light d-block">Order by phone</span>
+                  <span className="text-light d-block">Điện thoại</span>
 
                   <span className="d-block footer-color">
-                    Available everyday
+                    T2 - T6 | 08:00 - 22:00
                   </span>
 
                   <span className="contacts">
@@ -156,7 +152,7 @@ const Footer = () => {
                       to="tel:+201003533427"
                       className=" hover-color-yellow footer-color"
                     >
-                      (+20) 1003533427
+                      +84 111 222 345
                     </Link>
                   </span>
                 </p>
@@ -171,11 +167,7 @@ const Footer = () => {
                     />
                   </Link>
 
-                  <span className="text-light d-block">Email Us</span>
-
-                  <span className="d-block footer-color">
-                    Get in touch by email
-                  </span>
+                  <span className="text-light d-block">Email</span>
 
                   <span className="contacts">
                     <Link
@@ -194,13 +186,13 @@ const Footer = () => {
               className="text-light footer-toggle d-sm-none"
               onClick={toggleCustomerService}
             >
-              Customer Service{" "}
+              Dịch vụ khách hàng{" "}
               <FontAwesomeIcon
                 icon={faAngleDown}
                 className={`icon ${showCustomerService ? "icon-rotate" : ""} hover-color-yellow`}
               />
             </h6>
-            <h6 className="text-light d-none d-sm-block ">Customer Service</h6>
+            <h6 className="text-light d-none d-sm-block ">Dịch vụ khách hàng</h6>
 
             <div
               className={`footer-content ${showCustomerService ? "show" : ""}`}
@@ -211,7 +203,7 @@ const Footer = () => {
                     to="/contact"
                     className="footer-color link hover-color-yellow "
                   >
-                    Contact Us
+                    Liên hệ
                   </Link>
                 </p>
                 <p className="menu-footer">
@@ -232,8 +224,7 @@ const Footer = () => {
         <hr className="footer-color" />
         <div className="col-12 col-sm pt-2 pb-3 d-flex justify-content-start justify-content-sm-center text-center footer-color">
           <h6>
-            © Copyright 2023 Comfy Store. All Rights Reserved. Design By
-            Team3-ITI
+            © Copyright 2023 Comfy Store. All Rights Reserved. 
           </h6>
         </div>
       </div>

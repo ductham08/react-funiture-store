@@ -72,7 +72,7 @@ const SearchCard = ({ product, query }) => {
   useEffect(() => {
     setShowBtnSpinner(false);
     let outOfStock = false;
-    // check if product out of stock
+    // check if product Hết hàng
     if (product.colors.every((obj) => obj.stock === 0)) {
       setOutOfStock(true);
       outOfStock = true;
@@ -99,7 +99,7 @@ const SearchCard = ({ product, query }) => {
       >
         {outOfStock ? (
           <span className="badge d-block bg-yellow position-absolute text-white">
-            Out Of Stock
+            Hết hàng
           </span>
         ) : (
           product.discount > 0 && (

@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
   useEffect(() => {
     setShowBtnSpinner(false);
     let outOfStock = false;
-    // check if product out of stock
+    // check if product Hết hàng
     if (product.colors.every((obj) => obj.stock === 0)) {
       setOutOfStock(true);
       outOfStock = true;
@@ -54,7 +54,7 @@ const ProductCard = ({ product }) => {
     <div className="product-card card position-relative border-0 rounded-0">
       {outOfStock ? (
         <span className="badge d-block bg-yellow position-absolute text-white">
-          Out Of Stock
+          Hết hàng
         </span>
       ) : product.discount > 0 ? (
         <span className="badge d-block bg-yellow position-absolute text-white">
@@ -92,14 +92,14 @@ const ProductCard = ({ product }) => {
               className="add-to-cart-btn btn btn-bg-white py-2 text-uppercase position-absolute fw-semibold d-flex justify-content-center align-items-center gap-2"
               onClick={() => dispatch(showCartModal(true))}
             >
-              <FontAwesomeIcon icon={faCartShopping} /> In Cart
+              <FontAwesomeIcon icon={faCartShopping} /> Trong giỏ hàng
             </button>
           ) : (
             <button
               className="add-to-cart-btn btn btn-bg-white py-2 text-uppercase position-absolute fw-semibold d-flex justify-content-center align-items-center gap-2"
               onClick={() => handleAddToCart()}
             >
-              <FontAwesomeIcon icon={faPlus} /> Add to Cart
+              <FontAwesomeIcon icon={faPlus} /> Thêm vào giỏ hàng
             </button>
           )
         ) : (
@@ -119,18 +119,14 @@ const ProductCard = ({ product }) => {
           {product.discount > 0 ? (
             <div className="d-flex align-items-center justify-content-center gap-3">
               <span className="fw-semibold">
-                $
-                {(
-                  product.price -
-                  (product.price * product.discount) / 100
-                ).toFixed(2)}
+                {(product.price - (product.price * product.discount) / 100 ).toFixed(2).toLocaleString('vi-VN')} đ
               </span>
               <span className="color-old-price text-decoration-line-through">
-                ${product.price}
+                {product.price.toLocaleString('vi-VN')} đ
               </span>
             </div>
           ) : (
-            <span className="fw-semibold">${product.price}</span>
+            <span className="fw-semibold">{(product.price).toLocaleString('vi-VN')} đ</span>
           )}
         </div>
       </div>

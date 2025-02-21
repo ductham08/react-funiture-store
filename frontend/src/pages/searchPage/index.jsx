@@ -26,7 +26,7 @@ const SearchPage = () => {
   });
   const searchContent = useRef();
   const searchSchema = Yup.object().shape({
-    searchValue: Yup.string().required("Search value is required"),
+    searchValue: Yup.string().required("Thông tin tìm kiếm là bắt buộc"),
   });
 
   const getData = (query, page = 1) => {
@@ -102,7 +102,7 @@ const SearchPage = () => {
                   type="submit"
                   className="btn py-sm-2 p-0 h-100 w-100 btn-bg-dark text-white"
                 >
-                  Search
+                  Tìm kiếm
                 </button>
               </div>
             </Form>
@@ -111,7 +111,7 @@ const SearchPage = () => {
         {data ? (
           data.length > 0 ? (
             <div ref={searchContent}>
-              <h1 className="h4 mb-4 px-2">Total Results: {totalResults}</h1>
+              <h1 className="h4 mb-4 px-2">Tìm được {totalResults} kết quả</h1>
               <div className="row m-0 row-gap-3 mb-5">
                 {data.map((product) => (
                   <div key={product._id} className="sol-sm-6 col-md-4">
@@ -127,7 +127,7 @@ const SearchPage = () => {
             </div>
           ) : (
             <h2 className="text-center h5">
-              Sorry, can't find matching products
+              Không có sản phẩm nào trùng khớp
             </h2>
           )
         ) : query ? (

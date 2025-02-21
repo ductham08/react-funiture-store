@@ -5,9 +5,6 @@ import { useParams } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-//component
-
-// style
 import axios from "axios";
 import styles from "../../pages/account/account.module.css";
 import axiosInstance from "../../apis/config";
@@ -91,12 +88,12 @@ const AccountInfo = ({ user, token, setUser }) => {
         },
       })
       .then((res) => {
-        dispatch(showToast("Account Updated successfully!"));
+        dispatch(showToast("Cập nhật thông tin tài khoản thành công!"));
         SetShowBtnSpinner(false);
         setUser(localSendData)
       })
       .catch((err) => {
-        dispatch(showToast("Unable to update, please try again."));
+        dispatch(showToast("Cập nhật thông tin tài khoản không thành công, vui lòng thử lại"));
         SetShowBtnSpinner(false);
       });
   };
@@ -113,7 +110,6 @@ const AccountInfo = ({ user, token, setUser }) => {
         validationSchema={Yup.object({
           fullName: Yup.string()
             .required("Họ và tên là bắt buộc")
-            .matches(/^[a-zA-Z ]+$/, "Họ và tên không được có số hoặc ký tự đặc biệt")
             .min(3, "Họ và tên không được ít hơn 3 ký tự")
             .max(50, "Họ và tên không thể nhiều hơn 50 ký tự"),
           email: Yup.string()

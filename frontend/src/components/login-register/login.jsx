@@ -55,7 +55,7 @@ const Login = ({ closeModal, saveUserData }) => {
       })
       .catch((error) => {
         // handle error, e.g. show error message
-        dispatch(showToast("Email or Password not correct. Please try again."));
+        dispatch(showToast("Email hoặc mật khẩu không chính xác. Hãy thử lại."));
 
       });
   };
@@ -66,8 +66,8 @@ const Login = ({ closeModal, saveUserData }) => {
         validationSchema={Yup.object({
           email: Yup.string()
             .required("Email is required")
-            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Email must be a valid email address"),
-          password: Yup.string().required("Password is required"),
+            .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i, "Email phải là địa chỉ email hợp lệ"),
+          password: Yup.string().required("Mật khẩu là bắt buộc"),
         })}
         onSubmit={handleSubmit}
       >

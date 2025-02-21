@@ -31,7 +31,7 @@ const Aside = ({
       <aside className={`bg-white ${style.aside} pb-md-0 pb-4`}>
         {isSmallScreen && (
           <div className="bg-dark p-3 text-white d-flex justify-content-between align-items-center">
-            <h2 className="h6 text-uppercase mb-0">Filters</h2>
+            <h2 className="h6 text-uppercase mb-0">Bộ lọc</h2>
             <button
               type="button"
               className="btn outline-0 text-white border-0 p-0"
@@ -45,13 +45,13 @@ const Aside = ({
         <form className={`${style.form} pt-4 pb-5 px-3 p-md-0`}>
           <Filter
             data={categories}
-            name="categories"
+            name="Danh mục sản phẩm"
             active={filters.category}
             onFilter={handleCategoryFilter}
           />
           <Filter
             data={brands}
-            name="brands"
+            name="Thương hiệu"
             active={filters.brand}
             onFilter={handleBrandFilter}
           />

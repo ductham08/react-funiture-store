@@ -158,7 +158,7 @@ function Item({ item, cartId }) {
                     item.quantity > stock || stock === 0 ? "text-danger" : ""
                   }`}
                 >
-                  {stock > 0 ? stock : "Out Of Stock"}
+                  {stock > 0 ? stock : "Hết hàng"}
                 </span>
               </div>
             </div>

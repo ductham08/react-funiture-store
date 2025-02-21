@@ -11,7 +11,7 @@ import style from "../../../pages/dashboard/dashboard.module.css";
 
 const ProductsSearch = ({ onSearch, searchParams, onRemoveSearch }) => {
   const searchSchema = Yup.object().shape({
-    searchValue: Yup.string().required("Search value is required"),
+    searchValue: Yup.string().required("Thông tin tìm kiếm là bắt buộc"),
   });
 
   return (
@@ -37,13 +37,13 @@ const ProductsSearch = ({ onSearch, searchParams, onRemoveSearch }) => {
                   className="btn p-0 position-absolute end-0 top-50 translate-middle-y"
                 >
                   <FontAwesomeIcon icon={faXmark} />
-                  <span className="visually-hidden">erase search</span>
+                  <span className="visually-hidden">Xóa</span>
                 </button>
               )}
               <Field
                 type="text"
                 name="searchValue"
-                placeholder="search by id, name, category or brand"
+                placeholder="Tìm kiếm theo ID, tên, danh mục hoặc thương hiệu"
                 className={`form-control ${
                   errors.searchValue && touched.searchValue ? "is-invalid" : ""
                 }`}

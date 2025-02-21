@@ -20,7 +20,7 @@ const Filter = ({ data, name, active, onFilter }) => {
             className="form-check-label color-main-gray text-capitalize"
             htmlFor={`all-${name}`}
           >
-            All {name}
+            Tất cả
           </label>
         </div>
         {data.map((ele) => (

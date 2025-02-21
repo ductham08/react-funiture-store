@@ -11,7 +11,7 @@
 }
 
 @font-face {
-  font-family: 'Ginger';
+  font-family: 'Montserrat';
   src: url('../src/assets/fonts/Montserrat.ttf');
 }
 
@@ -25,8 +25,8 @@
   --footer-links: #999;
   --light-gray: #f6f6f6;
   --red: #e21c1c;
-  --heading-font: 'BonVoyage' !important;
-  --body-font: 'Ginger' !important;
+  --heading-font: 'Montserrat' !important;
+  --body-font: 'Montserrat' !important;
   --heading-letter-spacing: 3px;
   --body-letter-spacing: 2px;
 }

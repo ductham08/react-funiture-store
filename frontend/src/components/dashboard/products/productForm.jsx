@@ -189,7 +189,7 @@ const ProductForm = ({
       {/* stock and colors */}
       <div className="form-group mb-3">
         <label htmlFor={`${form}-prod-colors`} className="mb-1">
-          Colors & Stock
+          Màu sắc & Tình trạng
         </label>
         <div
           className={`d-flex gap-3 flex-wrap ${
@@ -248,7 +248,7 @@ const ProductForm = ({
       {/* images */}
       <div className="form-group mb-4 pb-4">
         <label htmlFor={`${form}-prod-images`} className="mb-1">
-          Images
+          Hình ảnh
         </label>
         <div
           className={`d-flex align-items-center gap-3 flex-wrap ${

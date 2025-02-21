@@ -195,7 +195,7 @@ const Shop = () => {
                       } mb-4`}
                     >
                       <p className="mb-0">
-                        Showing page {searchObj.page} of {totalPages} pages
+                        Hiển thị {searchObj.page} trên {totalPages} trang
                       </p>
                       {isSmallScreen ? (
                         <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center pt-3">
@@ -206,7 +206,7 @@ const Shop = () => {
                             onClick={handleOpenFilterModal}
                             aria-label="show filter modal"
                           >
-                            <FontAwesomeIcon icon={faFilter} /> Filters
+                            <FontAwesomeIcon icon={faFilter} /> Bộ lọc
                           </button>
                           <SortDropdown
                             active={searchObj.sort}
@@ -236,7 +236,7 @@ const Shop = () => {
                 </>
               ) : (
                 <p className="text-center h5 mt-5 pt-5">
-                  Sorry, no matching products
+                  Không có sản phẩm nào phù hợp
                 </p>
               )
             ) : (

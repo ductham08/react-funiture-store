@@ -8,20 +8,20 @@ const SortDropdown = ({ active, onSort }) => {
         id="sort-dropdown"
         className="border color-main-black"
       >
-        <span className="text-secondary">Sort By: </span>
+        <span className="text-secondary">Xếp theo: </span>
         {active === 1
-          ? "Price, Low to Hight"
+          ? "Giá, thấp tới cao"
           : active === -1
-          ? "Price, High to Low"
-          : "default"}
+          ? "Giá, cao tới thấp"
+          : "Mặc định"}
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => onSort(0)}>Default</Dropdown.Item>
+        <Dropdown.Item onClick={() => onSort(0)}>Mặc định</Dropdown.Item>
         <Dropdown.Item onClick={() => onSort(1)}>
-          Price, Low to High
+          Giá, thấp tới cao
         </Dropdown.Item>
         <Dropdown.Item onClick={() => onSort(-1)}>
-          Price, High to Low
+        Giá, cao tới thấp
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
