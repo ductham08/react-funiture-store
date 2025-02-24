@@ -122,8 +122,7 @@ const AccountOrders = ({ token }) => {
                                     <p
                                       className={`${styles.price} py-1 px-2 text-center`}
                                     >
-                                      $
-                                      {item.price * (1 - item.product_id.discount / 100).toFixed(2)}
+                                      {item.price * (1 - item.product_id.discount / 100).toFixed(2).toLocaleString('vi-VN')} đ
                                     </p>
                                   </div>
                                 </div>

@@ -61,12 +61,12 @@ const BrandsUpdate = () => {
       .then((res) => {
         SetShowBtnSpinner(false);
         dispatch(setBrands(res.data));
-        dispatch(showToast("brand updated successfully!"));
+        dispatch(showToast("Cập nhật thông tin thương hiệu thành công!"));
       })
       .catch((error) => {
         console.log(error);
         SetShowBtnSpinner(false);
-        dispatch(showToast("Unable to update brand, please try again."));
+        dispatch(showToast("Cập nhật thông tin thương hiệu không thành công, vui lòng thử lại sau"));
       });
   };
 
@@ -77,7 +77,7 @@ const BrandsUpdate = () => {
 
   return (
     <div className="px-3 px-md-4 py-4">
-      <h1 className={`py-3 h4 ${dashStyle["fw-bold"]}`}>Update Brand</h1>
+      <h1 className={`py-3 h4 ${dashStyle["fw-bold"]}`}>Cập nhật thương hiệu</h1>
 
       <div>
         <Formik
@@ -95,13 +95,13 @@ const BrandsUpdate = () => {
             <Form encType="multipart/form-data">
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="name">
-                  Name
+                  Thương hiệu
                 </label>
                 <Field
                   className={`form-control`}
                   name="name"
                   type="text"
-                  placeholder="Please enter the Brand Name"
+                  placeholder="Vui lòng nhập tên thương hiệu"
                 />
                 {errors.name && touched.name ? (
                   <span className="text-danger ms-2"> {errors.name}</span>
@@ -109,13 +109,13 @@ const BrandsUpdate = () => {
               </div>
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="category">
-                  Category
+                  Danh mục
                 </label>
                 <Field
                   type="text"
                   className={`form-control me-2`}
                   name="category"
-                  placeholder="Please enter the Brand Category"
+                  placeholder="Vui lòng nhập danh mục của thương hiệu"
                 />
                 {errors.category && touched.category ? (
                   <span className="text-danger ms-2">{errors.category}</span>
@@ -123,7 +123,7 @@ const BrandsUpdate = () => {
               </div>
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="image">
-                  Image
+                  Hình ảnh
                 </label>
                 <div>
                   {brandById.image && (
@@ -153,7 +153,7 @@ const BrandsUpdate = () => {
                       selectedFile &&
                       !allowedTypes.includes(selectedFile.type)
                     ) {
-                      setImageError("Only png, jpeg, or jpg files are allowed");
+                      setImageError("Chỉ được phép cho phép các tệp PNG, JPEG hoặc JPG");
                     } else {
                       setImageError(null);
                       setImage(selectedFile);

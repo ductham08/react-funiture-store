@@ -51,11 +51,11 @@ const CategoryUpdate = () => {
         },
       })
       .then(() => {
-        dispatch(showToast("Category was updated successfully!"));
+        dispatch(showToast("Danh mục đã được cập nhật thành công!"));
       })
       .catch((err) => {
         console.log(err);
-        setErrorMessage("Unable to update category data, please try again.");
+        setErrorMessage("Không thể tìm nạp dữ liệu danh mục, vui lòng thử lại.");
       });
   };
 
@@ -65,7 +65,7 @@ const CategoryUpdate = () => {
 
   return (
     <div className="px-4 py-4">
-      <h1 className="fs-4 py-4">Update Category</h1>
+      <h1 className="fs-4 py-4">Cập nhật danh mục</h1>
       {errorMessage ? (
         <div className="alert alert-danger">{errorMessage}</div>
       ) : null}

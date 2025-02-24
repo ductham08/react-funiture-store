@@ -53,14 +53,14 @@ const ProductsData = () => {
         },
       })
       .then((res) => {
-        dispatch(showToast("Product was deleted successfully!"));
+        dispatch(showToast("Xóa sản phẩm thành công!"));
         setProductToDelete(null);
         getAllData();
       })
       .catch((error) => {
         console.log(error);
         dispatch(
-          showToast("Failed to delete product! Please try again later!")
+          showToast("Xóa sản phẩm không thành công, vui lòng thử lại sau!")
         );
         setProductToDelete(null);
       });
@@ -135,7 +135,7 @@ const ProductsData = () => {
             to="/dashboard/products/add"
             className={`text-capitalize btn ${style["dash-btn"]} align-self-center align-self-md-start d-flex gap-1 align-items-center mb-md-0 mb-5`}
           >
-            <FontAwesomeIcon icon={faPlus} /> <span>Add a product</span>
+            <FontAwesomeIcon icon={faPlus} /> <span>Thêm mới</span>
           </Link>
         </div>
       </div>
@@ -148,19 +148,15 @@ const ProductsData = () => {
                   <th scope="col" className="ps-4">
                     #ID
                   </th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Discount</th>
-                  <th scope="col">Category</th>
-                  <th scope="col" className="text-center">
-                    Brand
-                  </th>
-                  <th scope="col">Stock</th>
-                  <th scope="col">Images</th>
-                  <th scope="col" colSpan={2}>
-                    Actions
-                  </th>
+                  <th scope="col">Tên sản phẩm</th>
+                  <th scope="col">Mô tả</th>
+                  <th scope="col">Giá bán</th>
+                  <th scope="col">Giảm giá</th>
+                  <th scope="col">Danh mục</th>
+                  <th scope="col" className="text-center">Thương hiệu</th>
+                  <th scope="col">Kho</th>
+                  <th scope="col">Ảnh</th>
+                  <th scope="col" colSpan={2}>Thao tác</th>
                 </tr>
               </thead>
               <tbody>
@@ -182,7 +178,7 @@ const ProductsData = () => {
                       <td>{product.description.slice(0, 40)}...</td>
                       {/* price */}
                       <td className="text-center">
-                        {product.price.toFixed(2)}
+                        {product.price.toFixed(2).toLocaleString('vi-VN')} đ
                       </td>
                       {/* disount */}
                       <td className="text-center">

@@ -29,7 +29,7 @@ const CategoryForm = ({ initialValues, onSubmit }) => {
         <Form>
           <div className="form-group">
             <label htmlFor="name" className="pb-2">
-              Category Name
+              Tên danh mục
             </label>
             <Field
               type="text"
@@ -46,7 +46,7 @@ const CategoryForm = ({ initialValues, onSubmit }) => {
 
           <div className="form-group">
             <label htmlFor="image" className="form-label pt-4">
-              {initialValues.image ? "Update" : "Upload"} Category Image
+              {initialValues.image ? "Cập nhật" : "Tải lên"} ảnh
             </label>
             <div>
               {values.image !== null ? (
@@ -78,7 +78,7 @@ const CategoryForm = ({ initialValues, onSubmit }) => {
             ) : null}
           </div>
           <button type="submit" className="btn btn-primary mt-4">
-            {initialValues.name ? "Update" : "Add"} Category
+            {initialValues.name ? "Cập nhật" : "Thêm mới"}
           </button>
         </Form>
       )}

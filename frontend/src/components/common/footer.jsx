@@ -80,7 +80,7 @@ const Footer = () => {
             <div className={`footer-content ${showFollowUs ? "show" : ""}`}>
               <div className="social-icons">
                 <Link
-                  to="https://instagram.com/comfy_store4?igshid=MzNlNGNkZWQ4Mg=="
+                  to="#"
                   className="me-4 link-light  hover-color-yellow"
                 >
                   <FontAwesomeIcon

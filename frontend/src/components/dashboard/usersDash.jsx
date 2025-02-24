@@ -14,6 +14,7 @@ import Spinner from "../common/spinner";
 
 // style
 import dashStyle from "./../../pages/dashboard/dashboard.module.css";
+import axios from "axios";
 
 const UsersDash = () => {
   const [allUsers, setAllUsers] = useState([]);
@@ -31,7 +32,6 @@ const UsersDash = () => {
 
   useEffect(() => {
     if (searchQuery === "") {
-      // If search query is empty, show all users
       axiosInstance
         .get(`/users`, {
           params: {
@@ -52,7 +52,6 @@ const UsersDash = () => {
           console.log(err);
         });
     } else {
-      // If search query is not empty, fetch search results
       axiosInstance
         .get(`/users/search`, {
           params: {
@@ -71,7 +70,6 @@ const UsersDash = () => {
     }
   }, [currentPage, searchQuery]);
 
-  // delete user
   function deleteUser(id) {
     setShowWarning(false);
 
@@ -110,26 +108,21 @@ const UsersDash = () => {
       });
   }
 
-  // Update current page state when page number is clicked
   function onPageChange(page) {
     setCurrentPage(page);
   }
 
-  // search for id or email
   function handleSearch(event) {
     const query = event.target.value.trim().toLowerCase();
     setCurrentPage(1);
     setSearchQuery(query);
     if (query === "") {
-      // If search query is empty, show all users
       setAllUsersInPage(allUsers);
     } else {
-      // If search query is not empty, fetch search results
       setAllUsersInPage(allUsers);
     }
   }
 
-  // expand object id
   function showAllId(event) {
     const id = event.currentTarget.dataset.id;
     if (displayId) {
@@ -140,7 +133,6 @@ const UsersDash = () => {
     setDisplayId((prevDisplayId) => !prevDisplayId);
   }
 
-  // expand email 
   function showAllEmail(event,userEmail) {
     const email = userEmail;
     if(displayEmail){
@@ -152,7 +144,6 @@ const UsersDash = () => {
     setDisplayEmail((prevDisplayEmail) => !prevDisplayEmail);
   }
 
-  // hide form the first part of the email and expand the rest of the email (domain)
   function hideEmail(email) {
     const parts = email.split("@");
     const username = parts[0];
@@ -165,7 +156,7 @@ const UsersDash = () => {
   return (
     <div className={`py-4`}>
       <h1 className={`mb-2 h4 py-3 ps-4 ${dashStyle["fw-bold"]}`}>
-        Users (total: {totalUsers})
+        Người dùng (Hiện có: {totalUsers})
       </h1>
 
       <div className="overflow-x-auto">
@@ -174,7 +165,7 @@ const UsersDash = () => {
             <input
               className="form-control"
               type="search"
-              placeholder="Search by user id or email address"
+              placeholder="Tìm theo id hoặc email"
               aria-controls="DataTables_Table_0"
               value={searchQuery}
               onChange={handleSearch}
@@ -187,18 +178,12 @@ const UsersDash = () => {
               <table className="table border-top" id="DataTables_Table_0">
                 <thead>
                   <tr>
-                    <th scope="col" className="ps-4">
-                      #ID
-                    </th>
-                    <th scope="col">FullName</th>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Họ và tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Governorate</th>
-                    <th scope="col" className="text-center">
-                      City
-                    </th>
-                    <th scope="col">Orders</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Điện thoại</th>
+                    <th scope="col">Đơn hàng</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -224,7 +209,6 @@ const UsersDash = () => {
                             style={{ cursor: "pointer" }}
                           >
                              {hideEmail(user.email)}
-                            {/* {user.email} */}
                           </td>
                           <td
                             className={
@@ -232,14 +216,6 @@ const UsersDash = () => {
                             }
                           >
                             {user.phone !== "" ? user.phone : "x"}
-                          </td>
-                          <td className="text-center">
-                            {user.address.governorate !== ""
-                              ? user.address.governorate
-                              : "x"}
-                          </td>
-                          <td className="text-center">
-                            {user.address.city !== "" ? user.address.city : "x"}
                           </td>
                           <td className="text-center">{user.order.length}</td>
                           <td className="text-center">
@@ -259,7 +235,7 @@ const UsersDash = () => {
                   ) : (
                     <tr>
                       <td colSpan="8" className="text-center">
-                        No users found.
+                        Không có dữ liệu
                       </td>
                     </tr>
                   )}
@@ -279,7 +255,7 @@ const UsersDash = () => {
 
         {showWarning && userIdToDelete && (
           <ConfirmPopup
-            msg={"Are you sure you want to delete user?"}
+            msg={"Bạn có chắc chắn muốn xóa người dùng này?"}
             onConfirm={() => deleteUser(userIdToDelete)}
             onCancel={() => {
               setShowWarning(false);

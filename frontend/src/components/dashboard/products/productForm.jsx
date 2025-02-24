@@ -46,7 +46,7 @@ const ProductForm = ({
       {/* name */}
       <div className="form-group mb-3">
         <label htmlFor={`${form}-prod-name`} className="mb-1">
-          Name
+          Tên sản phẩm
         </label>
         <Field
           type="text"
@@ -66,7 +66,7 @@ const ProductForm = ({
       {/* description */}
       <div className="form-group mb-3">
         <label htmlFor={`${form}-prod-description`} className="mb-1">
-          Description
+          Mô tả
         </label>
         <Field
           as="textarea"
@@ -87,7 +87,7 @@ const ProductForm = ({
         <div className="col-6 px-0">
           <div className="form-group mb-3">
             <label htmlFor={`${form}-prod-price`} className="mb-1">
-              Price
+              Giá bán
             </label>
             <Field
               type="number"
@@ -109,7 +109,7 @@ const ProductForm = ({
         <div className="col-6 pe-0 ps-md-3">
           <div className="form-group mb-3">
             <label htmlFor={`${form}-prod-discount`} className="mb-1">
-              Discount
+              Giảm giá
             </label>
             <Field
               type="number"
@@ -133,7 +133,7 @@ const ProductForm = ({
         <div className="col-6 px-0">
           <div className="form-group mb-3">
             <label htmlFor={`${form}-prod-category`} className="mb-1">
-              Category
+              Danh mục
             </label>
             <Field
               name="category"
@@ -161,7 +161,7 @@ const ProductForm = ({
         <div className="col-6 pe-0 ps-md-3">
           <div className="form-group mb-3">
             <label htmlFor={`${form}-prod-brand`} className="mb-1">
-              Brand
+              Thương hiệu
             </label>
             <Field
               name="brand"
@@ -171,7 +171,7 @@ const ProductForm = ({
                 errors.brand && touched.brand ? "is-invalid" : ""
               }`}
             >
-              <option value="">Choose...</option>
+              <option value="" disabled>Chọn thương hiệu...</option>
               {brands?.map((ele) => (
                 <option key={ele._id} value={ele._id}>
                   {ele.name}

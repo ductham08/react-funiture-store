@@ -28,37 +28,37 @@ const navLinks = [
     id: 0,
     to: "/dashboard",
     icon: faHouse,
-    name: "Home",
+    name: "Dashboard",
   },
   {
     id: 1,
     to: "/dashboard/users",
     icon: faUsers,
-    name: "Users",
+    name: "Người dùng",
   },
   {
     id: 2,
     to: "/dashboard/orders",
     icon: faBasketShopping,
-    name: "Orders",
+    name: "Đơn hàng",
   },
   {
     id: 3,
     to: "/dashboard/products",
     icon: faShop,
-    name: "Products",
+    name: "Sản phẩm",
   },
   {
     id: 4,
     to: "/dashboard/brands",
     icon: faCopyright,
-    name: "Brands",
+    name: "Thương hiệu",
   },
   {
     id: 5,
     to: "/dashboard/categories",
     icon: faChair,
-    name: "Categories",
+    name: "Danh mục",
   },
 ];
 
@@ -155,7 +155,7 @@ const NavAside = ({ isSmallScreen, collapsed, onToggleAside }) => {
             } align-self-start lh-1  rounded-2 px-2 py-2 d-flex align-items-center gap-2`}
           >
             <FontAwesomeIcon icon={faRightFromBracket} />
-            <span className={`${collapsed ? "d-none" : ""}`}>Log Out</span>
+            <span className={`${collapsed ? "d-none" : ""}`}>Đăng xuất</span>
           </button>
         </div>
       </div>

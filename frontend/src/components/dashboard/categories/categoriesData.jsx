@@ -103,7 +103,7 @@ const CategoriesData = () => {
       })
       .then((response) => {
         if (response.status === 200) {
-          dispatch(showToast("Category was deleted successfully!"));
+          dispatch(showToast("Danh mục đã bị xóa thành công!"));
           setDisplayedCategories(
             displayedCategories.filter((category) => category._id !== id)
           );
@@ -111,12 +111,12 @@ const CategoriesData = () => {
           setCategoryToDelete(null);
         } else {
           dispatch(
-            showToast("Failed to delete Category! Please try again later!")
+            showToast("Không thể xóa danh mục! Hãy thử lại sau!")
           );
         }
       })
       .catch((error) => {
-        console.log("Error deleting category:", error);
+        console.log("Lỗi xóa danh mục:", error);
       });
   }
 
@@ -127,7 +127,7 @@ const CategoriesData = () => {
   return (
     <div className="py-4">
       <h1 className={`mb-2 py-3 ps-4 fs-4 ${dashStyle["fw-bold"]}`}>
-        Categories (total: {totalCategories})
+        Danh mục (Hiện có: {totalCategories})
       </h1>
       <div className="row ms-4 me-3">
         <div className="my-4 row d-flex flex-column-reverse flex-md-row  align-items-center justify-content-between">
@@ -135,7 +135,7 @@ const CategoriesData = () => {
             <input
               className="form-control"
               type="search"
-              placeholder="Search by id or name"
+              placeholder="Tìm kiếm theo ID hoặc tên"
               value={searchQuery}
               onChange={handleSearch}
             />
@@ -147,7 +147,7 @@ const CategoriesData = () => {
               onClick={handleAddCategory}
               value={searchQuery}
             >
-              <FontAwesomeIcon icon={faPlus} /> Add New Category
+              <FontAwesomeIcon icon={faPlus} /> Thêm danh mục mới
             </button>
           </div>
         </div>
@@ -161,11 +161,11 @@ const CategoriesData = () => {
                   <th scope="col" className="ps-4">
                     #ID
                   </th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Products</th>
-                  <th scope="col">Image</th>
+                  <th scope="col">Danh mục</th>
+                  <th scope="col">Sản phẩm</th>
+                  <th scope="col">Hình ảnh</th>
                   <th scope="col" className="text-center">
-                    Actions
+                    Thao tác
                   </th>
                 </tr>
               </thead>

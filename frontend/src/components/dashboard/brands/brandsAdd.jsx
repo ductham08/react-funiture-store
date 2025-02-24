@@ -43,7 +43,7 @@ const BrandsAdd = () => {
         },
       })
       .then((res) => {
-        dispatch(showToast("brand added successfully!"));
+        dispatch(showToast("Thương hiệu được thêm thành công!"));
         SetShowBtnSpinner(false);
         setName("");
         setCategory("");
@@ -54,19 +54,19 @@ const BrandsAdd = () => {
         console.log(err);
         SetShowBtnSpinner(false);
         // handle error, e.g. show error message
-        dispatch(showToast("Unable to add new brand, please try again."));
+        dispatch(showToast("Không thể thêm thương hiệu mới, vui lòng thử lại."));
       });
   };
 
   return (
     <div className="px-3 px-md-4 py-4">
-      <h1 className={`py-3 h4 ${dashStyle["fw-bold"]}`}>Add New Brand</h1>
+      <h1 className={`py-3 h4 ${dashStyle["fw-bold"]}`}>Thêm thương hiệu mới</h1>
       <div>
         <Formik
           initialValues={{ name: name, category: category, image: image }}
           validationSchema={Yup.object({
-            name: Yup.string().required("brand name is required"),
-            category: Yup.string().required("Category is required"),
+            name: Yup.string().required("Tên thương hiệu là bắt buộc"),
+            category: Yup.string().required("Danh mục của thương hiệu là bắt buộc"),
           })}
           onSubmit={addBrandSubmit}
         >
@@ -74,7 +74,7 @@ const BrandsAdd = () => {
             <Form encType="multipart/form-data">
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="name">
-                  Name
+                  Thương hiệu
                 </label>
                 <Field
                   className={`form-control`}
@@ -85,7 +85,7 @@ const BrandsAdd = () => {
                     setName(event.target.value);
                     setFieldValue("name", event.target.value);
                   }}
-                  placeholder="Please enter a Brand Name"
+                  placeholder="Vui lòng điền tên thương hiệu"
                 />
                 {errors.name && touched.name ? (
                   <span className="text-danger ms-2"> {errors.name}</span>
@@ -93,7 +93,7 @@ const BrandsAdd = () => {
               </div>
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="category">
-                  Category
+                  Danh mục
                 </label>
                 <Field
                   type="text"
@@ -104,7 +104,7 @@ const BrandsAdd = () => {
                     setCategory(event.target.value);
                     setFieldValue("category", event.target.value);
                   }}
-                  placeholder="Please enter a Brand Category"
+                  placeholder="Vui lòng điền danh mục của thương hiệu"
                 />
                 {errors.category && touched.category ? (
                   <span className="text-danger ms-2">{errors.category}</span>
@@ -112,7 +112,7 @@ const BrandsAdd = () => {
               </div>
               <div className={`mb-4`}>
                 <label className="mb-1" htmlFor="image">
-                  Image
+                  Ảnh
                 </label>
                 <div>
                   {image !== "" ? (
@@ -140,7 +140,7 @@ const BrandsAdd = () => {
                     } else {
                       setImage("");
                       setImageError(
-                        "Please choose a valid image file (png, jpg, jpeg)"
+                        "Chỉ được phép cho phép các tệp PNG, JPEG hoặc JPG"
                       );
                     }
                   }}

@@ -27,8 +27,7 @@ const BrandCategories = () => {
               />
 
               <div className={styles.content}>
-                <h4>mid-season</h4>
-                <h3>Eco-Friendly</h3>
+                <h3>Dễ tiếp cận</h3>
                 <Link
                   to="/shop"
                   className="text-decoration-none cursor-pointer"
@@ -54,8 +53,7 @@ const BrandCategories = () => {
               />
 
               <div className={styles.content}>
-                <h4>top trending</h4>
-                <h3>Outdoor</h3>
+                <h3>Cao cấp</h3>
                 <Link
                   to="/shop"
                   className="text-decoration-none cursor-pointer"

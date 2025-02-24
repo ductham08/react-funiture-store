@@ -100,7 +100,7 @@ const BrandsData = () => {
         },
       })
       .then((res) => {
-        dispatch(showToast("brand was deleted successfully!"));
+        dispatch(showToast("Thương hiệu đã bị xóa thành công!"));
         axiosInstance
           .get(`/brands`, {
             params: {
@@ -120,7 +120,7 @@ const BrandsData = () => {
       })
       .catch((err) => {
         console.log(err);
-        showToast("Failed to delete brand! Please try again later!");
+        showToast("Không thể xóa thương hiệu! Vui lòng thử lại sau!");
       });
   }
   return (
@@ -135,7 +135,7 @@ const BrandsData = () => {
               <input
                 className="form-control"
                 type="search"
-                placeholder="Search by brand id or brand name"
+                placeholder="Tìm theo id hoặc tên thương hiệu"
                 value={searchQuery}
                 onChange={handleSearch}
               />
@@ -145,7 +145,7 @@ const BrandsData = () => {
                 to="./add"
                 className={`btn text-capitalize ${dashStyle["dash-btn"]}`}
               >
-                <FontAwesomeIcon icon={faPlus} /> Add New Brand
+                <FontAwesomeIcon icon={faPlus} /> Thêm mới
               </Link>
             </div>
           </div>
@@ -159,13 +159,11 @@ const BrandsData = () => {
                 <th scope="col" className="ps-4">
                   #ID
                 </th>
-                <th scope="col">Name</th>
-                <th scope="col">Image</th>
-                <th scope="col">Category</th>
-                <th scope="col">Products</th>
-                <th scope="col" className="text-center">
-                  Actions
-                </th>
+                <th scope="col">Thương hiệu</th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Danh mục</th>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col" className="text-center">Thao tác</th>
               </tr>
             </thead>
 

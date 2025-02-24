@@ -21,18 +21,18 @@ const ProductsAdd = () => {
   const dispatch = useDispatch();
 
   const formSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    description: Yup.string().required("Description is required"),
-    price: Yup.number().min(1, "minimum is 1").required("Price is required"),
+    name: Yup.string().required("Tên sản phẩm là bắt buộc"),
+    description: Yup.string().required("Mô tả là bắt buộc"),
+    price: Yup.number().min(1, "Thấp nhất là 1đ").required("Giá bán là bắt buộc"),
     discount: Yup.number()
-      .min(0, "minimum is 0")
-      .integer("discount is integer")
+      .min(0, "Nhỏ nhất là 0")
+      .integer("Giảm giá là số nguyên")
       .required("Discount is required"),
-    category: Yup.string().required("Category is required"),
-    brand: Yup.string().required("Brand is required"),
+    category: Yup.string().required("Giảm giá là bắt buộc"),
+    brand: Yup.string().required("Thương hiệu là bắt buộc"),
     colors: Yup.array()
-      .min(1, "Please select a color")
-      .required("Color is required"),
+      .min(1, "Vui lòng chọn một màu")
+      .required("Màu sắc là bắt buộc"),
   });
 
   const handleAddProduct = (values, { setSubmitting, resetForm }) => {
@@ -40,7 +40,7 @@ const ProductsAdd = () => {
     // check if there're errors
     if (imageError || stockError) return;
     if (selectedImages.length === 0) {
-      setImageError("Enter at least one image");
+      setImageError("Nhập ít nhất một hình ảnh");
       return;
     }
     SetShowBtnSpinner(true);
@@ -67,13 +67,13 @@ const ProductsAdd = () => {
         },
       })
       .then((res) => {
-        dispatch(showToast("Product was added successfully!"));
+        dispatch(showToast("Sản phẩm đã được thêm vào thành công!"));
         resetForm();
         setSelectedImages([]);
         SetShowBtnSpinner(false);
       })
       .catch((error) => {
-        dispatch(showToast("Failed to add product! Please try again later."));
+        dispatch(showToast("Không thể thêm sản phẩm! Vui lòng thử lại sau."));
         SetShowBtnSpinner(false);
         console.log(error);
       });
@@ -83,7 +83,7 @@ const ProductsAdd = () => {
     let files = Array.from(e.target.files);
     for (let i = 0; i < files.length; i++) {
       if (!files[i].type.startsWith("image")) {
-        setImageError("Invalid file, Images only");
+        setImageError("Tệp không hợp lệ, chỉ hình ảnh");
         return;
       }
       setImageError("");
@@ -93,7 +93,7 @@ const ProductsAdd = () => {
 
   return (
     <div className="px-3 px-md-4">
-      <h1 className="h4 mb-4 py-3">Add Product</h1>
+      <h1 className="h4 mb-4 py-3">Thêm sản phẩm</h1>
       <Formik
         initialValues={{
           name: "",
@@ -124,7 +124,7 @@ const ProductsAdd = () => {
             />
             {!showBtnSpinner ? (
               <button type="submit" className={`btn ${style["dash-btn"]}`}>
-                Add
+                Thêm
               </button>
             ) : (
               <button

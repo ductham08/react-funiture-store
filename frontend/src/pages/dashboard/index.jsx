@@ -54,7 +54,7 @@ const Dashboard = () => {
     <div id={style.dashboard} className="position-relative">
       <div className="d-lg-flex flex-lg-row h-100">
         <div
-          className={`${collapseAside ? "col-lg-1" : "col-lg-3"} ${
+          className={`${collapseAside ? "col-lg-1" : "col-lg-2"} ${
             style.col
           } px-0 pe-lg-3 position-relative`}
         >

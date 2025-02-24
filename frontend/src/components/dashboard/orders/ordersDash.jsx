@@ -97,7 +97,7 @@ const OrdersDash = () => {
             setAllordersInPage(res.data);
             setAllorders(res.data.data);
             setTotaOrders(res.data.totalOrders);
-            dispatch(showToast("orders was deleted successfully!"));
+            dispatch(showToast("Xóa đơn đặt hàng thành công!"));
             setOrderIdToDelete("");
           })
           .catch(err => {
@@ -107,7 +107,7 @@ const OrdersDash = () => {
       .catch(err => {
         console.log(err);
         dispatch(
-          showToast(`error occur in order delete order ${id} !try again `)
+          showToast(`Có lỗi trong quá trình xóa đơn hhàng ${id} !vui lòng thử lại `)
         );
       });
   }
@@ -138,7 +138,7 @@ const OrdersDash = () => {
     <div>
       <div className={`py-4`}>
         <h4 className={`mb-2 py-3 ps-4 ${dashStyle["fw-bold"]}`}>
-          Orders (total: {totalOrders})
+          Đơn hàng (Hiện có: {totalOrders})
         </h4>
         {deleteStatus ? (
           <div
@@ -161,7 +161,7 @@ const OrdersDash = () => {
             <input
               className="form-control"
               type="search"
-              placeholder="Search by order id ,user id or price"
+              placeholder="Tìm kiếm theo id đơn hàng, tên người dùng hoặc đơn giá"
               aria-controls="DataTables_Table_0"
               value={searchQuery}
               onChange={handleSearch}
@@ -173,27 +173,19 @@ const OrdersDash = () => {
             <table className="table border-top" id="DataTables_Table_0">
               <thead>
                 <tr>
-                  <th scope="col" className="ps-4">
-                    #ID
-                  </th>
-                  <th scope="col" className="ps-4">
-                    User ID
-                  </th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Time</th>
-                  <th scope="col">TotalPrice</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Governorate</th>
-                  <th scope="col">Postal Code</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Items Number</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Giá trị</th>
+                  <th scope="col">Điện thoại</th>
+                  <th scope="col">Ngày đặt hàng</th>
+                  <th scope="col">Địa chỉ nhận</th>
+                  <th scope="col">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
                 {allorders?.length > 0 ? (
                   allorders.map((order, index) => {
+                    console.log(order);
+                    
                     return (
                       <tr key={order?._id}>
                         <td
@@ -203,43 +195,15 @@ const OrdersDash = () => {
                         >
                           {order?._id.substring(0, 8) + "..."}
                         </td>
-                        <td
-                          className={`ps-4`}
-                          data-id={order?.userId}
-                          onClick={showAllId}
-                        >
-                          {order?.userId.substring(0, 8) + "..."}
-                        </td>
-                        <td>{new Date(order.date).toLocaleDateString()}</td>
-                        <td>{new Date(order.date).toLocaleTimeString()}</td>
-                        <td>{order?.totalPrice} $ </td>
-                        <td
-                          className={
-                            order?.phone !== "" ? "text-start" : "text-center"
-                          }
-                        >
+                        <td>{order?.totalPrice.toLocaleString('vi-VN')} đ</td>
+                        <td className={order?.phone !== "" ? "text-start" : "text-center"} >
                           {order?.phone !== "" ? order?.phone : "x"}
                         </td>
-                        <td className="text-center">
-                          {order?.address?.governorate !== ""
-                            ? order?.address?.governorate
-                            : "x"}
+                        <td className="text-start"> {new Date(order.date).toLocaleDateString()} | {new Date(order.date).toLocaleTimeString()} </td>
+                        <td className="text-start">
+                          {order?.address?.apartment} | {order?.address?.street} | {order?.address?.district} | {order?.address?.city}
                         </td>
-                        <td>{order?.address?.postalCode} </td>
-
-                        <td className="text-center">
-                          {order?.address?.city !== ""
-                            ? order?.address?.city
-                            : "x"}
-                        </td>
-                        <td>
-                          {order?.address?.street} - {order?.address?.building}
-                          {"- "}
-                          {order?.address?.apartment}{" "}
-                        </td>
-
-                        <td className="text-center">{order.items?.length}</td>
-                        <td className="text-center">
+                        <td className="text-start">
                           <FontAwesomeIcon
                             icon={faTrashCan}
                             type="button"
@@ -275,7 +239,7 @@ const OrdersDash = () => {
         />
         {showWarning && orderIdToDelete && (
           <ConfirmPopup
-            msg={"Are you sure you want to delete order?"}
+            msg={"Bạn có chắc chắn muốn xóa đơn hàng này?"}
             onConfirm={() => deleteOrder(orderIdToDelete)}
             onCancel={() => {
               setShowWarning(false);
