@@ -38,7 +38,7 @@ const AddCategory = () => {
       })
       .then((res) => {
         if (res.status === 201) {
-          dispatch(showToast("Category was added successfully!"));
+          dispatch(showToast("Danh mục sản phẩm đã được thêm mới!"));
           setTimeout(() => {
             navigate("/dashboard/categories");
           }, 4000);

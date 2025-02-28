@@ -643,3 +643,7 @@ footer {
 .form-control:disabled{
   background-color: var(--bs-body-bg);
 }
+
+.image-product{
+  aspect-ratio: 1 !important;
+}

@@ -94,9 +94,7 @@ const SearchCard = ({ product, query }) => {
 
   return (
     <>
-      <div
-        className={`${style["search-card"]} product-card card position-relative border-0 rounded-0`}
-      >
+      <div className={`${style["search-card"]} product-card card position-relative border-0 rounded-0`}>
         {outOfStock ? (
           <span className="badge d-block bg-yellow position-absolute text-white">
             Hết hàng
@@ -108,7 +106,7 @@ const SearchCard = ({ product, query }) => {
             </span>
           )
         )}
-        <div className="position-relative overflow-hidden holder">
+        <div className="position-relative overflow-hidden holder image-product">
           <Link to={`/product-details/${product._id}`} className="d-block">
             <img
               src={process.env.REACT_APP_BASE_URL + "/" + product.images[0].src}

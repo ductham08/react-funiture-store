@@ -186,10 +186,10 @@ const ProductsData = () => {
                       </td>
                       {/* category */}
                       <td className="text-center text-capitalize">
-                        {product.category.name}
+                        {product.category ? product.category.name : ''}
                       </td>
                       {/* brand */}
-                      <td className="text-center">{product.brand.name}</td>
+                      <td className="text-center">{product.brand ? product.brand.name : ''}</td>
                       {/* stock */}
                       <td>
                         <div>
@@ -274,7 +274,7 @@ const ProductsData = () => {
       )}
       {showWarning && productToDelete && (
         <ConfirmPopup
-          msg={`Are you sure you want to remove ${productToDelete.name} from products?`}
+          msg={`Bạn có chắc chắn muốn xóa sản phẩm ${productToDelete.name} khỏi kho hàng không?`}
           onConfirm={() =>
             handleRemoveProduct(
               productToDelete._id,

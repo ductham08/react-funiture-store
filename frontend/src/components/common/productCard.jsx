@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
       ) : (
         ""
       )}
-      <div className="holder position-relative overflow-hidden">
+      <div className="holder position-relative overflow-hidden image-product">
         <Link to={`/product-details/${product._id}`} className="d-block">
           <img
             src={process.env.REACT_APP_BASE_URL + "/" + product.images[0].src}

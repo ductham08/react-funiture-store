@@ -140,7 +140,7 @@ const Details = ({ product }) => {
       </p>
       <div className="border-top border-bottom py-4">
         <div className="d-flex align-items-center gap-2 mb-4">
-          <span className="fw-semibold">Tình trạng:</span>
+          <span className="fw-semibold">Còn lại:</span>
           <span
             className={
               activeColor.stock === 0 || activeQuantity > activeColor.stock
